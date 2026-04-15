@@ -1,0 +1,91 @@
+KEY,DESCRIPTION,COUNTRY,OWNER,TYPE
+IRON1000,Iron,China,,
+IRON2000,Iron,Japan,,
+IRON3000,Iron,Russland,,
+NKL00,Nickel,varies,,
+OPLT1000,Outer Plate,US,GBI,
+PCKG1000,Packaging,US,GBI,
+PDLT1000,Pedal Thread,US,GBI,
+PEDL1000,Pedal Assembly,US,GBI,
+PIN1000,Pin,US,GBI,
+PULY1000,Pulley,US,GBI,
+NKL1000,Nickel,Philippines,,
+NKL2000,Nickel,Indonesia,,
+NKL3000,Nickel,Russia,,
+RIM1000,Rim,US,GBI,
+RLR1000,Roller,US,GBI,
+SCHR1000,Small Chainring,US,GBI,
+SDL1000,Saddle,US,GBI,
+SDLC1000,Seat Clamp,US,GBI,
+RBR00,Rubber,varies,,
+RBR1000,Rubber,Thailand,,
+RBR2000,Rubber,Indonesia,,
+RBR3000,Rubber,Malaysia,,
+SKN1000,Skin,India,,
+BTW1000,Boomtown Tire & Wheel,US,BTW1000,Supplier
+DBB1000,Dallas Bike Basics,US,DBB1000,Supplier
+LAK1000,Lightbulb Accessory Kits,US,LAK1000,Supplier
+SBC1000,Space Bike Composites,US,SBC1000,Supplier
+NRAP1000,Night Rider Aluminium Products,US,NRAP1000,Supplier
+SG1000,Spy Gear,US,SG1000,Supplier
+RNB1000,Rapids Nuts n Bolts,US,RNB1000,Supplier
+GBS1000,Green Bkazers Seats,US,GBS1000,Supplier
+CRKA1000,Crank Arm,US,GBI,
+CVBR1000,Cantilever Brakes,US,GBI,
+DGAM1000,Derailleur Gear Assembly,US,GBI,
+DXTR1000,Deluxe Touring Bike Black,US,GBI,
+GSL1000,Gear Shift Lever,US,GBI,
+HB1000,Handlebar,US,GBI,
+HBS1000,Handlebar Stem,US,GBI,
+HS1000,Headset,US,GBI,
+INPL1000,Inner Plate,US,GBI,
+CHRI1000,Chromite,South Africa,,
+CHRI2000,Chromite,India,,
+CHRI3000,Chromite,Kazakhstan,,
+JWH1000,Jockey Wheels,US,GBI,
+LCHR1000,Large Chainring,US,GBI,
+LDR1000,Leather,US,GBI,
+IRON00,Iron,varies,,
+ALU1000,Aluminium,Unknown,,
+ALUT1000,Aluminium Trash,Germany,,
+ALUT00,Aluminum Trash,varies,,
+BL1000,Backlight,US,GBI,
+BRKC1000,Brake Cable,US,GBI,
+BRKL1000,Brake Lever,US,GBI,
+BRKT1000,Brake Kit,US,GBI,
+BUSN1000,Bushing,US,GBI,
+ALUT2000,Aluminum Trash,Austria,,
+BX2000,Bauxite,China,,
+CBLT1000,Chainring Bolt,US,GBI,
+CHAN1000,Chain,US,GBI,
+BX00,Bauxite,varies,,
+BX1000,Bauxite,Australia,,
+CHR1000,Chrom,Unknown,,
+CHRI00,Chromite,varies,,
+SDLP1000,Seat Post,US,GBI,
+SDLR1000,Seat Rails,US,GBI,
+SPK1000,Spoke,US,GBI,
+SPKN1000,Spoke Nipple,US,GBI,
+STLS1000,Stainless Steel,Unknown,,
+TRFR1000,Touring Frame-Black,US,GBI,
+TRHB1000,Touring Handle Bar Assembly,US,GBI,
+TRSK1000,Touring Seat Kit,US,GBI,
+TRWA1000,Touring Aluminum Wheel Assembly,US,GBI,
+TYRE1000,Tyre,US,GBI,
+VULK1000,Vulcanization,China,,
+VULK2000,Vulcanization,Germany,,
+WDOC1000,Warrenty Document,US,GBI,
+NKL4000,Nickel,Australia,,
+NKL5000,Nickel,Guinea,,
+FSSB1000,Fun n the Sun Seats n Bars,US,FSSB1000,Supplier
+SSUT1000,Sunny Side Up Tire,US,SSUT1000,Supplier
+ABS1000,ABS Brakes GmbH,DE,ABS1000,Supplier
+FTM1000,Flat Tire and More,DE,FTM1000,Supplier
+GS1000,Gummi Schultze,DE,GS1000,Supplier
+LS1000,Lohse Schraube,DE,LS1000,Supplier
+TS1000,Thick Spoke,DE,TS1000,Supplier
+MC1000,Main Carbon,DE,MC1000,Supplier
+SHG1000,Shell Gear,DE,SHG1000,Supplier
+CBS1000,Cologne Bike Supplies,DE,CBS1000,Supplier
+SS1000,Sachsen Stahl AG,DE,SS1000,Supplier
+RF1000,Run & Fun,DE,RF1000,Supplier

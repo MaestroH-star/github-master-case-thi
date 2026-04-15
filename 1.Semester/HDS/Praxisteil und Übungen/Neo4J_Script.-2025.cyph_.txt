@@ -1,0 +1,169 @@
+// Tutorial von Neo4J
+
+// Erzeugung des Graphen
+
+
+      CREATE (CloudAtlas:Movie {title:'Cloud Atlas', released:2012, tagline:'Everything is connected'})
+
+      CREATE (TomH:Person {name:'Tom Hanks', born:1956})
+      CREATE (TomT:Person {name:'Tom Tykwer', born:1965})
+
+      CREATE (HalleB:Person {name:'Halle Berry', born:1966})
+      CREATE (JimB:Person {name:'Jim Broadbent', born:1949})
+      CREATE (DavidMitchell:Person {name:'David Mitchell', born:1969})
+      CREATE (StefanArndt:Person {name:'Stefan Arndt', born:1961})
+
+      CREATE (Hugo:Person {name:'Hugo Weaving', born:1960})
+      CREATE (LillyW:Person {name:'Lilly Wachowski', born:1967})
+      CREATE (LanaW:Person {name:'Lana Wachowski', born:1965})
+
+// prüfen des aktuellen Graphen
+//      match(n) return n
+
+CREATE
+(TomH)-[:ACTED_IN {roles:['Zachry', 'Dr. Henry Goose', 'Isaac Sachs', 'Dermot Hoggins']}]->(CloudAtlas),
+(TomT)-[:DIRECTED]->(CloudAtlas)
+WITH TomH as a
+MATCH (a)-[:ACTED_IN]->(m)<-[:DIRECTED]-(d) RETURN a,m,d LIMIT 10;
+
+      CREATE
+//      (TomH)-[:ACTED_IN {roles:['Zachry', 'Dr. Henry Goose', 'Isaac Sachs', 'Dermot Hoggins']}]->(CloudAtlas),
+//      (TomT)-[:DIRECTED]->(CloudAtlas),
+      (Hugo)-[:ACTED_IN {roles:['Bill Smoke', 'Haskell Moore', 'Tadeusz Kesselring', 'Nurse Noakes', 'Boardman Mephi', 'Old Georgie']}]->(CloudAtlas),
+      (HalleB)-[:ACTED_IN {roles:['Luisa Rey', 'Jocasta Ayrs', 'Ovid', 'Meronym']}]->(CloudAtlas),
+      (JimB)-[:ACTED_IN {roles:['Vyvyan Ayrs', 'Captain Molyneux', 'Timothy Cavendish']}]->(CloudAtlas),
+      (LillyW)-[:DIRECTED]->(CloudAtlas),
+      (LanaW)-[:DIRECTED]->(CloudAtlas),
+      (DavidMitchell)-[:WROTE]->(CloudAtlas),
+      (StefanArndt)-[:PRODUCED]->(CloudAtlas)
+
+      WITH HalleB as a
+      MATCH (a)-[:ACTED_IN]->(m)<-[:DIRECTED]-(d) RETURN a,m,d LIMIT 10;
+
+// weitere Nodes
+
+CREATE (KeanuR:Person {name:'Keanu Reeves', born:1964})
+CREATE (JoelS:Person {name:'Joel Silver', born:1952})
+
+// eigene Auswertungen
+
+match(n) return n
+
+MATCH (tom:Person {name: 'Tom Hanks'}) RETURN tom
+
+// adäquat
+MATCH (tom:Person {name: "Tom Hanks"}) RETURN tom
+
+MATCH (keanu:Person {name: "Keanu Reeves"}) RETURN keanu
+
+MATCH (tom:Person {name: 'Tom Hanks'})-[:ACTED_IN]->(m) RETURN tom, m
+
+MATCH (tom:Person {name: "Tom Hanks"})-[:ACTED_IN]->(m) RETURN tom, m LIMIT 1;
+
+MATCH (tom:Person {name: "Tom Hanks"})-[:ACTED_IN]->(m) RETURN tom, m LIMIT 4;
+
+// jetzt kommen mehrere Kanten hinzu
+MATCH (tom:Person {name: "Tom Hanks"})-[:ACTED_IN]->(m) RETURN tom, m LIMIT 5;
+
+MATCH (tom:Person {name: "Tom Hanks"})-[:ACTED_IN]->(m) RETURN tom, m LIMIT 10;
+
+MATCH (tom:Person {name: "Tom Hanks"})-[:ACTED_IN]->(m)<-[:DIRECTED]-(d) RETURN tom, m,d LIMIT 10;
+
+MATCH (tom:Person {name: "Tom Hanks"})-[:ACTED_IN]->(m)<-[:DIRECTED]-(d) RETURN tom, m,d;
+
+// constraints
+
+// movies müssen einen eindeutigen Titel bekommen
+
+CREATE CONSTRAINT FOR (n:Movie) REQUIRE (n.title) IS UNIQUE
+
+// Personen einen eindeutigen Namen
+
+CREATE CONSTRAINT FOR (n:Person) REQUIRE (n.name) IS UNIQUE
+
+// check:
+// negativ
+CREATE (CloudAtlas:Movie {title:'Cloud Atlas', released:2024, tagline:'Everything is connected'})
+
+// positiv
+CREATE (CloudAtlas:Movie {title:'Cloud Atlas Teil 2', released:2024, tagline:'Everything is connected'})
+
+
+
+// indizes
+
+Index nodes
+Create indexes on one or more properties for all nodes
+that have a given label. Indexes are used to increase search performance.
+
+Erstellen von Indizes für eines oder mehrere Eigenschaften für alle Knoten,
+die ein bestimmtes Label haben. Indizes werden verwendet, um die Suchleistung zu steigern.
+
+CREATE INDEX FOR (m:Movie) ON (m.released)
+
+
+// Abfrage Beispiele
+
+MATCH (tom:Person {name: "Tom Hanks"}) RETURN tom
+
+MATCH (cloudAtlas:Movie {title: "Cloud Atlas"}) RETURN cloudAtlas
+
+MATCH (people:Person) RETURN people.name LIMIT 10
+
+// Graphdarstellung
+
+MATCH (nineties:Movie) WHERE nineties.released >= 1990 AND nineties.released < 2000 RETURN nineties
+
+// Tabellenausgabe da der title angefragt wurde
+
+MATCH (nineties:Movie) WHERE nineties.released >= 1990 AND nineties.released < 2000 RETURN nineties.title
+
+
+Find patterns
+
+Verwendung der Art der Beziehung, um Muster innerhalb des Graphen zu finden, zum Beispiel
+ACTED_IN oder DIRECTED. Welche anderen Beziehungen existieren?
+
+What movies did Tom Hanks act in?
+MATCH (tom:Person {name: "Tom Hanks"})-[:ACTED_IN]->(tomHanksMovies) RETURN tom,tomHanksMovies
+
+Who directed "Cloud Atlas"?
+MATCH (cloudAtlas:Movie {title: "Cloud Atlas"})<-[:DIRECTED]-(directors) RETURN directors.name
+
+Who were Tom Hanks' co-actors?
+MATCH (tom:Person {name:"Tom Hanks"})-[:ACTED_IN]->(m)<-[:ACTED_IN]-(coActors) RETURN DISTINCT coActors.name
+
+How people are related to "Cloud Atlas"?
+MATCH (people:Person)-[relatedTo]-(:Movie {title: "Cloud Atlas"}) RETURN people.name, Type(relatedTo), relatedTo.roles
+
+Recommend
+Recommend new co-actors
+
+Anwendungsfall ist bspw. neue Co-Darsteller für Tom Hanks empfehlen. Ein grundlegender Empfehlungsansatz besteht darin, Verbindungen
+über die unmittelbare Nachbarschaft hinaus zu finden, die selbst gut vernetzt sind.Für Tom Hanks bedeutet das:
+
+Extend Tom Hanks co-actors to find co-co-actors who have nоt worked with Tom Hanks.
+MATCH (tom:Person {name:"Tom Hanks"})-[:ACTED_IN]->(m)<-[:ACTED_IN]-(coActors),
+    (coActors)-[:ACTED_IN]->(m2)<-[:ACTED_IN]-(cocoActors)
+  WHERE NOT (tom)-[:ACTED_IN]->()<-[:ACTED_IN]-(cocoActors) AND tom <> cocoActors
+  RETURN cocoActors.name AS Recommended, count(*) AS Strength ORDER BY Strength DESC
+
+Find someone who can introduce Tom Hanks to his potential co-actor, in this case Tom Cruise.
+MATCH (tom:Person {name:"Tom Hanks"})-[:ACTED_IN]->(m)<-[:ACTED_IN]-(coActors),
+  (coActors)-[:ACTED_IN]->(m2)<-[:ACTED_IN]-(cruise:Person {name:"Tom Cruise"})
+RETURN tom, m, coActors, m2, cruise
+
+
+// Aufräumen
+
+Remove the movie data set
+
+Wenn Sie mit dem Experimentieren fertig sind, können Sie Ihr Diagramm bereinigen.
+
+HINWEIS: Knoten können nicht gelöscht werden, wenn sie Beziehungen haben, daher müssen Sie die Knoten trennen, um sie zu löschen.
+
+Delete all Movie and Person nodes, and their relationships.
+MATCH (n) DETACH DELETE n
+
+Verify that the Movie Graph has been removed.
+MATCH (n) RETURN n

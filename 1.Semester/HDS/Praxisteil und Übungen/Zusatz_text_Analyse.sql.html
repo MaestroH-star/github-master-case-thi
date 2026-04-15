@@ -1,0 +1,48 @@
+
+<!-- saved from url=(0090)https://moodle.thi.de/pluginfile.php/757027/mod_resource/content/1/Zusatz_text_Analyse.sql -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>-- Additional-Script - Textanalysis and Fuzzy search
+
+-- Creation of a Full-Text-Index
+
+-- Full Text index for Fuzzy Search
+-- Template
+-- CREATE FULLTEXT INDEX <index-name> ON  (<column>)
+
+CREATE FULLTEXT INDEX FT_IDX_NAME1 ON "GBI_DEMO_DATA"."D000_Customer" ("NAME1") FUZZY SEARCH INDEX ON;
+
+CREATE FULLTEXT INDEX FT_IDX_NAME2 ON "GBI_DEMO_DATA"."D000_Customer" ("NAME2");
+
+
+-- Full Text Index for Sentimentanalysis --&gt; additional options
+-- CREATE FULLTEXT INDEX <index-name> ON </index-name></column><table></table> (<column>)<options>
+Create FullText Index "D000_IPHONENEWS_FTI" On "GBI_DEMO_DATA"."D000_IPHONE_NEWS"("File_Content")
+TEXT ANALYSIS ON
+LANGUAGE DETECTION ('en')
+CONFIGURATION 'EXTRACTION_CORE_VOICEOFCUSTOMER'
+ASYNC FLUSH AFTER 2 DOCUMENTS;
+
+
+-- Analysis
+-- Rough Analysis
+Create View D000_Show_Sentiment as select * from "GBI_DEMO_DATA"."$TA_D00_IPHONENEWS_FTI";
+
+
+-- Special for Sentimentanalysis
+create View D000_Show_Iphone_SentimentV2 as
+
+SELECT "TA_TYPE", ROUND("SENTIMENT_VALUE"/ "TOTAL_SENTIMENT_VALUE" * 100,2) AS "SENTIMENT_VALUE_PERCENTAGE"
+FROM
+(
+SELECT "TA_TYPE", SUM("TA_COUNTER") AS "SENTIMENT_VALUE"
+FROM "GBI_DEMO_DATA"."$TA_D00_IPHONENEWS_FTI"
+where TA_TYPE in('WeakPositiveSentiment','StrongPositiveSentiment','NeutralSentiment',
+'WeakNegativeSentiment','StrongNegativeSentiment','MajorProblem','MinorProblem')
+GROUP BY "TA_TYPE"
+) AS TABLE1,
+(
+SELECT SUM("TA_COUNTER") AS "TOTAL_SENTIMENT_VALUE"
+FROM "GBI_DEMO_DATA"."$TA_D00_IPHONENEWS_FTI"
+where TA_TYPE in('WeakPositiveSentiment','StrongPositiveSentiment','NeutralSentiment',
+'WeakNegativeSentiment','StrongNegativeSentiment','MajorProblem','MinorProblem')
+) AS TABLE2
+</options></column><table></table></index-name></body></html>

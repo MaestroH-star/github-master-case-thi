@@ -1,0 +1,57 @@
+create row table "GBI_DEMO_DATA"."000_PERSON"( "ID" VARCHAR (3) not null,
+	 "NAME" VARCHAR (20) null,
+	 "LAST_NAME" VARCHAR (30) null,
+	 "DOB" VARCHAR (8) null,
+	 primary key ("ID") );
+
+-- Project
+create row table "GBI_DEMO_DATA"."000_PROJECT"( "ID" VARCHAR (3) not null,
+	 "NAME" VARCHAR (20) not null,
+	 "RESSOURCES" INTEGER null,
+	 "BUDGET" DECIMAL (8,
+	2) null,
+	 primary key ("ID",
+	"NAME") );
+
+
+
+-- AREA
+create row table "GBI_DEMO_DATA"."000_AREA"( "ID" VARCHAR (3) not null,
+	 "AREA" VARCHAR (20) null,
+	 primary key ("ID") );
+
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('001','ABAP Models',2,10456.34);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('001','ABAP on Eclipse',5,20000.00);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('001','ABAP on HANA',2,45500.00);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('002','SUP Apps',3,3567.12);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('003','Code Refactoring',1,5120.50);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('004','SAPScript convertion',5,567.90);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('004','Adobe Forms Docs',2,345.19);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('004','Smart Forms Docs',6,462.10);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('004','Smart/Adobe Forms',2,234.90);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('005','HANA Apps',2,50000.00);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('005','BW on HANA',4,50000.00);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('006','Flex Apps',7,3500.50);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('006','Dashboards',3,2345.29);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('006','XCelsius',4,5678.10);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('007','ABAP Classes',2,1250.10);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('008','OSS Notes',2,2500.00);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('009','SUP Killer Apps',2,5600.50);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('009','SAP Gateway',7,5800.00);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('009','SUP and Gateway',5,5678.00);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('010','Blue Ruby',6,3500.00);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('010','Blue Python',4,3500.00);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('011','ABAP Editor',5,4000.00);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('011','ABAP Debugger',5,2000.00);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('012','EP',5,8500.50);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('012','KM',5,6500.50);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('012','MI',3,4500.50);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('013','SAP Education',6,5000.00);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('013','Certifications',3,3000.00);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('014','SAP FI',4,500.50);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('014','SAP SD',6,400.50);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('014','SAP CO',3,500.40);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('014','SAP MM',7,400.50);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('014','SAP WM',2,300.99);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('015','Research',1,5000.00);
+insert into "GBI_DEMO_DATA"."000_PROJECT" values('015','Development',4,8000.00);

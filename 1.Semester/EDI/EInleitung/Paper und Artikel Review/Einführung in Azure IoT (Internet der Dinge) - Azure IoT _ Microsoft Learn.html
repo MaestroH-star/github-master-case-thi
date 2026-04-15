@@ -1,0 +1,2723 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://learn.microsoft.com/de-de/azure/iot/iot-introduction -->
+<html class="layout layout-holy-grail show-table-of-contents conceptual show-breadcrumb default-focus theme-light" lang="de-de" dir="ltr" data-authenticated="false" data-auth-status-determined="true" data-target="docs" x-ms-format-detection="none" style="--window-inner-height: 452px !important; --atlas-header-height: 54px !important; --atlas-footer-height: 233px !important; --atlas-header-visible-height: 54px !important; --atlas-footer-visible-height: 0px !important;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+			<title>Einführung in Azure IoT (Internet der Dinge) - Azure IoT | Microsoft Learn</title>
+			
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="color-scheme" content="light dark">
+
+			<meta name="description" content="Einführung in die Grundlagen von Azure IoT und der IoT-Dienste, einschließlich Beispielen zur Veranschaulichung der Anwendung von IoT, und wie sie mit der adaptiven Cloud zusammenhängen.">
+			<link rel="canonical" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction"> 
+
+			<!-- Non-customizable open graph and sharing-related metadata -->
+			<meta name="twitter:card" content="summary_large_image">
+			<meta name="twitter:site" content="@MicrosoftLearn">
+			<meta property="og:type" content="website">
+			<meta property="og:image:alt" content="Microsoft Learn">
+			<meta property="og:image" content="https://learn.microsoft.com/en-us/media/open-graph-image.png">
+			<!-- Page specific open graph and sharing-related metadata -->
+			<meta property="og:title" content="Einführung in Azure IoT (Internet der Dinge) - Azure IoT">
+			<meta property="og:url" content="https://learn.microsoft.com/de-de/azure/iot/iot-introduction">
+			<meta property="og:description" content="Einführung in die Grundlagen von Azure IoT und der IoT-Dienste, einschließlich Beispielen zur Veranschaulichung der Anwendung von IoT, und wie sie mit der adaptiven Cloud zusammenhängen.">
+			<meta name="platform_id" content="b43b9fdf-7bb4-f3af-0707-ced8943de8b0"> <meta name="scope" content="Azure,IoT">
+			<meta name="locale" content="de-de">
+			 <meta name="adobe-target" content="true"> <meta name="learn-experiments" content="true">
+			<meta name="uhfHeaderId" content="azure">
+
+			<meta name="page_type" content="conceptual">
+
+			<!--page specific meta tags-->
+			
+
+			<!-- custom meta tags -->
+			
+		<meta name="schema" content="Conceptual">
+	
+		<meta name="author" content="dominicbetts">
+	
+		<meta name="breadcrumb_path" content="/azure/bread/toc.json">
+	
+		<meta name="depot_name" content="Azure.azure-documents">
+	
+		<meta name="document_id" content="da6b6051-1704-5bb7-a49c-fd606d35e9be">
+	
+		<meta name="document_version_independent_id" content="78af1b4d-7f4d-17ce-46df-00dca9737870">
+	
+		<meta name="feedback_help_link_type" content="get-help-at-qna">
+	
+		<meta name="feedback_help_link_url" content="https://learn.microsoft.com/answers/tags/35/azure-iot/">
+	
+		<meta name="feedback_product_url" content="https://feedback.azure.com/d365community/forum/fcb810f7-f824-ec11-b6e6-000d3a4f0da0">
+	
+		<meta name="feedback_system" content="Standard">
+	
+		<meta name="git_commit_id" content="721f353bb25318ce878f15e4ab663e2d998a85f8">
+	
+		<meta name="gitcommit" content="https://github.com/MicrosoftDocs/azure-docs-pr/blob/721f353bb25318ce878f15e4ab663e2d998a85f8/articles/iot/iot-introduction.md">
+	
+		<meta name="learn_banner_products" content="azure">
+	
+		<meta name="ms.author" content="dobett">
+	
+		<meta name="ms.date" content="2025-10-07T00:00:00Z">
+	
+		<meta name="ms.service" content="azure-iot">
+	
+		<meta name="ms.suite" content="office">
+	
+		<meta name="ms.topic" content="overview">
+	
+		<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/azure-docs-pr/blob/live/articles/iot/iot-introduction.md">
+	
+		<meta name="permissioned-type" content="public">
+	
+		<meta name="recommendation_types" content="Training">
+	
+		<meta name="recommendation_types" content="Certification">
+	
+		<meta name="recommendations" content="true">
+	
+		<meta name="services" content="iot">
+	
+		<meta name="site_name" content="Docs">
+	
+		<meta name="updated_at" content="2026-02-06T18:37:00Z">
+	
+		<meta name="ms.translationtype" content="HT">
+	
+		<meta name="ms.contentlocale" content="de-de">
+	
+		<meta name="loc_version" content="2026-02-04T19:04:31.7531328Z">
+	
+		<meta name="loc_source_id" content="Github-70773711#live">
+	
+		<meta name="loc_file_id" content="Github-70773711.live.Azure.azure-documents.articles/iot/iot-introduction.md">
+	
+		<meta name="toc_rel" content="toc.json">
+	
+		<meta name="word_count" content="2391">
+	
+		<meta name="asset_id" content="iot/iot-introduction">
+	
+		<meta name="item_type" content="Content">
+	
+		<meta name="monikers" content="migrate">
+	
+		<meta name="monikers" content="cyclecloud-8">
+	
+		<meta name="monikers" content="cyclecloud-7">
+	
+		<meta name="monikers" content="migrate-classic">
+	
+		<meta name="previous_tlsh_hash" content="8A76DE82732F8821ED117306197A9FDA155CCC459CB3B9F84C1D6CA2BD1ABAFBCF2542D9E75309E2D114E1877BDCA705FEB2B76AFE3E83086638E05CC12313215A7825D4A6">
+	
+		<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/iot/iot-introduction.md">
+	
+		<meta name="markdown_url" content="https://learn.microsoft.com/de-de/azure/iot/iot-introduction?accept=text/markdown">
+	 
+		<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/486161dc-fa28-4625-9b1c-1a21d690bc8d" data-source="generated">
+	
+		<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/5287f575-02f0-405f-92b7-800456526b0c" data-source="generated">
+	
+		<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/07bb3e10-d135-43ff-bc8b-360497cb39fa" data-source="generated">
+	
+		<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/5dd28c86-729c-4723-ab5a-57e26fcec2a8" data-source="generated">
+	
+		<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/06e86142-34c2-4b94-ab9c-9477c21f7152" data-source="generated">
+	
+		<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/12e559b9-eaf6-4aee-9af7-62334e15f863" data-source="generated">
+	
+
+			<!-- assets and js globals -->
+			
+			<link rel="stylesheet" href="./Einführung in Azure IoT (Internet der Dinge) - Azure IoT _ Microsoft Learn_files/site-ltr.css">
+			<script id="learn-experiments-context" type="application/json">
+				{"source":"live","assignmentContext":"","variantNames":[],"variants":{},"dataVersion":42}
+		  </script>
+			<link rel="preconnect" href="https://mscom.demdex.net/" crossorigin="">
+						<link rel="dns-prefetch" href="https://target.microsoft.com/">
+						<link rel="dns-prefetch" href="https://microsoftmscompoc.tt.omtrdc.net/">
+						<link rel="preload" as="script" href="https://learn.microsoft.com/static/third-party/adobe-target/at-js/2.9.0/at.js" integrity="sha384-l4AKhsU8cUWSht4SaJU5JWcHEWh1m4UTqL08s6b/hqBLAeIDxTNl+AMSxTLx6YMI" crossorigin="anonymous" id="adobe-target-script" type="application/javascript">
+			<script src="./Einführung in Azure IoT (Internet der Dinge) - Azure IoT _ Microsoft Learn_files/wcp-consent.js.Herunterladen"></script>
+			<script src="./Einführung in Azure IoT (Internet der Dinge) - Azure IoT _ Microsoft Learn_files/ms.jsll-4.min.js.Herunterladen"></script>
+			<script src="./Einführung in Azure IoT (Internet der Dinge) - Azure IoT _ Microsoft Learn_files/deprecation.js.Herunterladen"></script>
+
+			<!-- msdocs global object -->
+			<script id="msdocs-script">
+		var msDocs = {
+  "environment": {
+    "accessLevel": "online",
+    "azurePortalHostname": "portal.azure.com",
+    "reviewFeatures": false,
+    "supportLevel": "production",
+    "systemContent": true,
+    "siteName": "learn",
+    "legacyHosting": false
+  },
+  "data": {
+    "contentLocale": "de-de",
+    "contentDir": "ltr",
+    "userLocale": "de-de",
+    "userDir": "ltr",
+    "pageTemplate": "Conceptual",
+    "brand": "azure",
+    "context": {},
+    "standardFeedback": true,
+    "showFeedbackReport": false,
+    "feedbackHelpLinkType": "get-help-at-qna",
+    "feedbackHelpLinkUrl": "https://learn.microsoft.com/answers/tags/35/azure-iot/",
+    "feedbackSystem": "Standard",
+    "feedbackGitHubRepo": "MicrosoftDocs/azure-docs",
+    "feedbackProductUrl": "https://feedback.azure.com/d365community/forum/fcb810f7-f824-ec11-b6e6-000d3a4f0da0",
+    "extendBreadcrumb": false,
+    "isEditDisplayable": false,
+    "isPrivateUnauthorized": false,
+    "hideViewSource": false,
+    "isPermissioned": false,
+    "hasRecommendations": true,
+    "contributors": [
+      {
+        "name": "dominicbetts",
+        "url": "https://github.com/dominicbetts"
+      },
+      {
+        "name": "cwatson-cat",
+        "url": "https://github.com/cwatson-cat"
+      },
+      {
+        "name": "asergaz",
+        "url": "https://github.com/asergaz"
+      },
+      {
+        "name": "timlt",
+        "url": "https://github.com/timlt"
+      }
+    ]
+  },
+  "functions": {}
+};;
+	</script>
+
+			<!-- base scripts, msdocs global should be before this -->
+			<script src="./Einführung in Azure IoT (Internet der Dinge) - Azure IoT _ Microsoft Learn_files/index-docs.js.Herunterladen"></script><style></style>
+			
+
+			<!-- json-ld -->
+			
+		<script>bazadebezolkohpepadr="1831431565"</script><script type="text/javascript" src="./Einführung in Azure IoT (Internet der Dinge) - Azure IoT _ Microsoft Learn_files/6d296e14" defer=""></script><style id="ms-consent-banner-main-styles">.w8hcgFksdo30C8w-bygqu{color:#000}.ydkKdaztSS0AeHWIeIHsQ a{color:#0067B8}.erL690_8JwUW-R4bJRcfl{background-color:#EBEBEB;border:none;color:#000}.erL690_8JwUW-R4bJRcfl:enabled:hover{color:#000;background-color:#DBDBDB;box-shadow:0px 4px 10px rgba(0,0,0,0.25);border:none}.erL690_8JwUW-R4bJRcfl:enabled:focus{background-color:#DBDBDB;box-shadow:0px 4px 10px rgba(0,0,0,0.25);border:2px solid #000}.erL690_8JwUW-R4bJRcfl:disabled{opacity:1;color:rgba(0,0,0,0.2);background-color:rgba(0,0,0,0.2);border:none}._1zNQOqxpBFSokeCLGi_hGr{border:none;background-color:#0067B8;color:#fff}._1zNQOqxpBFSokeCLGi_hGr:enabled:hover{color:#fff;background-color:#0067B8;box-shadow:0px 4px 10px rgba(0,0,0,0.25);border:none}._1zNQOqxpBFSokeCLGi_hGr:enabled:focus{background-color:#0067B8;box-shadow:0px 4px 10px rgba(0,0,0,0.25);border:2px solid #000}._1zNQOqxpBFSokeCLGi_hGr:disabled{opacity:1;color:rgba(0,0,0,0.2);background-color:rgba(0,120,215,0.2);border:none}._23tra1HsiiP6cT-Cka-ycB{position:relative;display:flex;z-index:9999;width:100%;background-color:#F2F2F2;justify-content:space-between;text-align:left}div[dir="rtl"]._23tra1HsiiP6cT-Cka-ycB{text-align:right}._1Upc2NjY8AlDn177YoVj0y{margin:0;padding-left:5%;padding-top:8px;padding-bottom:8px}div[dir="rtl"] ._1Upc2NjY8AlDn177YoVj0y{margin:0;padding:8px 5% 8px 0;float:none}._23tra1HsiiP6cT-Cka-ycB svg{fill:none;max-width:none;max-height:none}._1V_hlU-7jdtPiooHMu89BB{display:table-cell;padding:12px;width:24px;height:24px;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:24px;line-height:0}.f6QKJD7fhSbnJLarTL-W-{display:table-cell;vertical-align:middle;padding:0;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:13px;line-height:16px}.f6QKJD7fhSbnJLarTL-W- a{text-decoration:underline}._2j0fmugLb1FgYz6KPuB91w{display:inline-block;margin-left:5%;margin-right:5%;min-width:40%;min-width:calc((150px + 3 * 4px) * 2 + 150px);min-width:-webkit-fit-content;min-width:-moz-fit-content;min-width:fit-content;align-self:center;position:relative}._1XuCi2WhiqeWRUVp3pnFG3{margin:4px;padding:5px;min-width:150px;min-height:36px;vertical-align:top;cursor:pointer;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px;text-align:center}._1XuCi2WhiqeWRUVp3pnFG3:focus{box-sizing:border-box}._1XuCi2WhiqeWRUVp3pnFG3:disabled{cursor:not-allowed}._2bvsb3ubApyZ0UGoQA9O9T{display:block;position:fixed;z-index:10000;top:0;left:0;width:100%;height:100%;background-color:rgba(255,255,255,0.6);overflow:auto;text-align:left}div[dir="rtl"]._2bvsb3ubApyZ0UGoQA9O9T{text-align:right}div[dir="rtl"] ._2bvsb3ubApyZ0UGoQA9O9T{left:auto;right:0}.AFsJE948muYyzCMktdzuk{position:relative;top:8%;margin-bottom:40px;margin-left:auto;margin-right:auto;box-sizing:border-box;width:640px;background-color:#fff;border:1px solid #0067B8}._3kWyBRbW_dgnMiEyx06Fu4{float:right;z-index:1;margin:2px;padding:12px;border:none;cursor:pointer;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:13px;line-height:13px;display:flex;align-items:center;text-align:center;color:#666;background-color:#fff}div[dir="rtl"] ._3kWyBRbW_dgnMiEyx06Fu4{margin:2px;padding:12px;float:left}.uCYvKvHXrhjNgflv1VqdD{position:static;margin-top:36px;margin-left:36px;margin-right:36px}._17pX1m9O_W--iZbDt3Ta5r{margin-top:0;margin-bottom:12px;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:600;font-size:20px;line-height:24px;text-transform:none}._1kBkHQ1V1wu3kl-YcLgUr6{height:446px;overflow:auto}._20_nXDf6uFs9Q6wxRXG-I-{margin-top:0;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px}._20_nXDf6uFs9Q6wxRXG-I- a{text-decoration:underline}dl._2a0NH_GDQEQe5Ynfo7suVH{margin-top:36px;margin-bottom:0;padding:0;list-style:none;text-transform:none}dt._3j_LCPv7fyXv3A8FIXVwZ4{margin-top:20px;float:none;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:600;font-size:18px;line-height:24px;list-style:none}.k-vxTGFbdq1aOZB2HHpjh{margin:0;padding:0;border:none}._2Bucyy75c_ogoU1g-liB5R{margin:0;padding:0;border-bottom:none;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:600;font-size:18px;line-height:24px;text-transform:none}._63gwfzV8dclrsl2cfd90r{display:inline-block;margin-top:0;margin-bottom:13px;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px}._1l8wM_4mRYGz3Iu7l3BZR7{display:block}._2UE03QS02aZGkslegN_F-i{display:inline-block;position:relative;left:5px;margin-bottom:13px;margin-right:34px;padding:3px}div[dir="rtl"] ._2UE03QS02aZGkslegN_F-i{margin:0 0 13px 34px;padding:3px;float:none}div[dir="rtl"] ._2UE03QS02aZGkslegN_F-i{left:auto;right:5px}._23tra1HsiiP6cT-Cka-ycB *::before,._2bvsb3ubApyZ0UGoQA9O9T *::before,._23tra1HsiiP6cT-Cka-ycB *::after,._2bvsb3ubApyZ0UGoQA9O9T *::after{box-sizing:inherit}._1HSFn0HzGo6w4ADApV8-c4{outline:2px solid rgba(0,0,0,0.8)}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2{display:inline-block;position:relative;margin-top:0;margin-left:0;margin-right:0;height:0;width:0;border-radius:0;cursor:pointer;outline:none;box-sizing:border-box;-webkit-appearance:none;-moz-appearance:none;appearance:none}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2+label::before{display:block;position:absolute;top:5px;left:3px;height:19px;width:19px;content:"";border-radius:50%;border:1px solid #000;background-color:#fff}div[dir="rtl"] input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2+label::before{left:auto;right:3px}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:hover::before{border:1px solid #0067B8}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:hover::after{display:block;position:absolute;top:10px;left:8px;height:9px;width:9px;content:"";border-radius:50%;background-color:rgba(0,0,0,0.8)}div[dir="rtl"] input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:hover::after{left:auto;right:8px}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:focus::before{border:1px solid #0067B8}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:focus::after{display:block;position:absolute;top:10px;left:8px;height:9px;width:9px;content:"";border-radius:50%;background-color:#000}div[dir="rtl"] input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:not(:disabled)+label:focus::after{left:auto;right:8px}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:checked+label::after{display:block;position:absolute;top:10px;left:8px;height:9px;width:9px;content:"";border-radius:50%;background-color:#000}div[dir="rtl"] input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:checked+label::after{left:auto;right:8px}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:disabled+label{cursor:not-allowed}input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:disabled+label::before{border:1px solid rgba(0,0,0,0.2);background-color:rgba(0,0,0,0.2)}._3RJzeL3l9Rl_lAQEm6VwdX{display:block;position:static;float:right;margin-top:0;margin-bottom:0;margin-left:19px;margin-right:0;padding-top:0;padding-bottom:0;padding-left:8px;padding-right:0;width:80%;width:calc(100% - 19px);font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px;text-transform:none;cursor:pointer;box-sizing:border-box}div[dir="rtl"] ._3RJzeL3l9Rl_lAQEm6VwdX{margin:0 19px 0 0;padding:0 8px 0 0;float:left}.nohp3sIG12ZBhzcMnPala{margin-top:20px;margin-bottom:48px}._2uhaEsmeotZ3P-M0AXo2kF{padding:0;width:278px;height:36px;cursor:pointer;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px;text-align:center}._2uhaEsmeotZ3P-M0AXo2kF:focus{box-sizing:border-box}._2uhaEsmeotZ3P-M0AXo2kF:disabled{cursor:not-allowed}._3tOu1FJ59c_xz_PmI1lKV5{float:right;padding:0;width:278px;height:36px;cursor:pointer;font-family:Segoe UI, SegoeUI, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:15px;line-height:20px;text-align:center}._3tOu1FJ59c_xz_PmI1lKV5:focus{box-sizing:border-box}._3tOu1FJ59c_xz_PmI1lKV5:disabled{cursor:not-allowed}div[dir="rtl"] ._3tOu1FJ59c_xz_PmI1lKV5{margin:0;padding:0;float:left}@media only screen and (max-width: 768px){._2j0fmugLb1FgYz6KPuB91w,._1Upc2NjY8AlDn177YoVj0y{padding-top:8px;padding-bottom:12px;padding-left:3.75%;padding-right:3.75%;margin:0;width:92.5%}._23tra1HsiiP6cT-Cka-ycB{display:block}._1XuCi2WhiqeWRUVp3pnFG3{margin-bottom:8px;margin-left:0;margin-right:0;width:100%}._2bvsb3ubApyZ0UGoQA9O9T{overflow:hidden}.AFsJE948muYyzCMktdzuk{top:1.8%;width:93.33%;height:96.4%;overflow:hidden}.uCYvKvHXrhjNgflv1VqdD{margin-top:24px;margin-left:24px;margin-right:24px;height:100%}._1kBkHQ1V1wu3kl-YcLgUr6{height:62%;height:calc(100% - 188px);min-height:50%}._2uhaEsmeotZ3P-M0AXo2kF{width:100%}._3tOu1FJ59c_xz_PmI1lKV5{margin-bottom:12px;margin-left:0;width:100%}div[dir="rtl"] ._3tOu1FJ59c_xz_PmI1lKV5{margin:0 0 12px 0;padding:0;float:none}}@media only screen and (max-width: 768px) and (orientation: landscape), only screen and (max-height: 260px), only screen and (max-width: 340px){.AFsJE948muYyzCMktdzuk{overflow:auto}}@media only screen and (max-height: 260px), only screen and (max-width: 340px){._1XuCi2WhiqeWRUVp3pnFG3{min-width:0}._3kWyBRbW_dgnMiEyx06Fu4{padding:3%}.uCYvKvHXrhjNgflv1VqdD{margin-top:3%;margin-left:3%;margin-right:3%}._17pX1m9O_W--iZbDt3Ta5r{margin-bottom:3%}._1kBkHQ1V1wu3kl-YcLgUr6{height:calc(79% - 64px)}.nohp3sIG12ZBhzcMnPala{margin-top:5%;margin-bottom:10%}._3tOu1FJ59c_xz_PmI1lKV5{margin-bottom:3%}div[dir="rtl"] ._3tOu1FJ59c_xz_PmI1lKV5{margin:0 0 3% 0;padding:0;float:none}}
+</style><style type="text/css" id="ms-consent-banner-theme-styles">._23tra1HsiiP6cT-Cka-ycB {
+            background-color: #F2F2F2 !important;
+        }.w8hcgFksdo30C8w-bygqu {
+            color: #000000 !important;
+        }.ydkKdaztSS0AeHWIeIHsQ a {
+            color: #0067B8 !important;
+        }._2bvsb3ubApyZ0UGoQA9O9T {
+            background-color: rgba(255, 255, 255, 0.6) !important;
+        }.AFsJE948muYyzCMktdzuk {
+            background-color: #FFFFFF !important;
+            border: 1px solid #0067B8 !important;
+        }._3kWyBRbW_dgnMiEyx06Fu4 {
+            color: #666666 !important;
+            background-color: #FFFFFF !important;
+        }._1zNQOqxpBFSokeCLGi_hGr {
+            border: none !important;
+            background-color: #0067B8 !important;
+            color: #FFFFFF !important;
+        }._1zNQOqxpBFSokeCLGi_hGr:enabled:hover {
+            color: #FFFFFF !important;
+            background-color: #0067B8 !important;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25) !important;
+            border: none !important;
+        }._1zNQOqxpBFSokeCLGi_hGr:enabled:focus {
+            background-color: #0067B8 !important;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25) !important;
+            border: 2px solid #000000 !important;
+        }._1zNQOqxpBFSokeCLGi_hGr:disabled {
+            opacity: 1 !important;
+            color: rgba(0, 0, 0, 0.2) !important;
+            background-color: rgba(0, 120, 215, 0.2) !important;
+            border: none !important;
+        }.erL690_8JwUW-R4bJRcfl {
+            border: none !important;
+            background-color: #EBEBEB !important;
+            color: #000000 !important;
+        }.erL690_8JwUW-R4bJRcfl:enabled:hover {
+            color: #000000 !important;
+            background-color: #DBDBDB !important;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25) !important;
+            border: none !important;
+        }.erL690_8JwUW-R4bJRcfl:enabled:focus {
+            background-color: #DBDBDB !important;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25) !important;
+            border: 2px solid #000000 !important;
+        }.erL690_8JwUW-R4bJRcfl:disabled {
+            opacity: 1 !important;
+            color: rgba(0, 0, 0, 0.2) !important;
+            background-color: rgba(0, 0, 0, 0.2) !important;
+            border: none !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label::before {
+            border: 1px solid #000000 !important;
+            background-color: #FFFFFF !important;
+        }._1HSFn0HzGo6w4ADApV8-c4 {
+            outline: 2px solid rgba(0, 0, 0, 0.8) !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:checked + label::after {
+            background-color: #000000 !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label:hover::before {
+            border: 1px solid #0067B8 !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label:hover::after {
+            background-color: rgba(0, 0, 0, 0.8) !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label:focus::before {
+            border: 1px solid #0067B8 !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2 + label:focus::after {
+            background-color: #000000 !important;
+        }input[type="radio"]._1dp8Vp5m3HwAqGx8qBmFV2:disabled + label::before {
+            border: 1px solid rgba(0, 0, 0, 0.2) !important;
+            background-color: rgba(0, 0, 0, 0.2) !important;
+        }</style><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"name":"Learn","position":1,"@type":"ListItem","item":"https://learn.microsoft.com/de-de/"},{"name":"Azure","position":2,"@type":"ListItem","item":"https://learn.microsoft.com/de-de/azure/"},{"name":"Internet der Dinge","position":3,"@type":"ListItem","item":"https://learn.microsoft.com/de-de/azure/iot/"}]}</script></head>
+	
+			<body id="body" data-bi-name="body" class="layout-body " lang="de-de" dir="ltr">
+				<header class="layout-body-header">
+		<div class="header-holder has-default-focus">
+			
+		<a href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#main" style="z-index: 1070" class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body">
+			Zu Hauptinhalt wechseln
+		</a>
+	
+		<a href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#" data-skip-to-ask-learn="" style="z-index: 1070" class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body" hidden="">
+			Zur Ask Learn-Chaterfahrung wechseln
+		</a>
+	
+
+			<div id="cookie-consent-holder" data-test-id="cookie-consent-container"></div><div id="banner-holder" class="has-default-focus has-overflow-hidden display-none-visual-diff theme-light"><!----><section data-bi-name="tier1-event-banner" data-dismissable="disappearing" class="tier1-event-banner position-relative padding-block-md build-banner display-none-visual-diff">
+		<div class="uhf-container display-flex-tablet align-items-center">
+			<div class="has-backdrop-filter-blur margin-right-xxl-tablet padding-right-md padding-right-none-tablet">
+				<h2 class="title is-2 is-responsive text-wrap-pretty margin-bottom-xs"><!---->Microsoft Build<!----></h2>
+				<p class="font-size-sm"><!---->June 2-3, 2026<!----></p>
+			</div>
+			<p class="container is-max-mobile display-none display-block-widescreen has-backdrop-filter-blur font-size-sm margin-left-none margin-right-xxl text-wrap-pretty">
+				Go deep on real code and real systems in San Francisco and online
+			</p>
+			<a data-bi-name="CTA" class="button margin-top-sm margin-bottom-sm-tablet " href="https://aka.ms/MSBuild_FY26_BN_MSLearn_Hero">
+				<span><!---->Learn more<!----></span>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</a>
+		</div>
+		<button type="button" data-dismiss="" data-bi-name="close" class="button delete delete-lg position-absolute top-0 right-0 margin-xs margin-sm-tablet ">
+			<span class="visually-hidden"><!---->Warnung schließen<!----></span>
+		</button>
+	</section><!----></div>
+			<!-- Unsupported browser warning -->
+			<div id="unsupported-browser" style="background-color: white; color: black; padding: 16px; border-bottom: 1px solid grey;" hidden="">
+				<div style="max-width: 800px; margin: 0 auto;">
+					<p style="font-size: 24px">Dieser Browser wird nicht mehr unterstützt.</p>
+					<p style="font-size: 16px; margin-top: 16px;">
+						Führen Sie ein Upgrade auf Microsoft Edge durch, um die neuesten Features, Sicherheitsupdates und den technischen Support zu nutzen.
+					</p>
+					<div style="margin-top: 12px;">
+						<a href="https://go.microsoft.com/fwlink/p/?LinkID=2092881" style="background-color: #0078d4; border: 1px solid #0078d4; color: white; padding: 6px 12px; border-radius: 2px; display: inline-block;">
+							Microsoft Edge herunterladen
+						</a>
+						<a href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge" style="background-color: white; padding: 6px 12px; border: 1px solid #505050; color: #171717; border-radius: 2px; display: inline-block;">
+							Weitere Informationen zu Internet Explorer und Microsoft Edge
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- site header -->
+			<div id="ms--site-header" data-test-id="site-header-wrapper" itemscope="itemscope" itemtype="http://schema.org/Organization">
+				<div id="ms--mobile-nav" class="site-header display-none-tablet padding-inline-none gap-none" data-bi-name="mobile-header" data-test-id="mobile-header"><!---->
+		<div id="ms--site-header-hamburger" data-test-id="site-header-hamburger">
+			<button type="button" class="button button-clear inner-focus" data-test-id="mobile-nav-open-button" data-bi-name="mobile-nav-open-button" title="Globale Navigation" aria-label="Globale Navigation">
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-menu"></span>
+				</span>
+			</button>
+		</div>
+
+		<!-- Brand -->
+		
+		<a class="site-header-brand" itemprop="url" href="https://learn.microsoft.com/de-de/" data-bi-name="site-header-brand-learn-mobile" data-test-id="site-header-brand-mobile">
+			<span><!---->Learn<!----></span>
+		</a>
+	
+
+		<!-- MS logo -->
+		
+		<a href="https://www.microsoft.com/" aria-label="Microsoft" itemprop="url" data-bi-name="site-header-microsoft-logo-mobile" data-test-id="site-header-microsoft-logo-mobile" class="site-header-logo site-header-logo-centered">
+			
+		<svg aria-hidden="true" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" itemprop="logo" itemscope="itemscope">
+			<path d="M11.5216 0.5H0V11.9067H11.5216V0.5Z" fill="#f25022"></path>
+			<path d="M24.2418 0.5H12.7202V11.9067H24.2418V0.5Z" fill="#7fba00"></path>
+			<path d="M11.5216 13.0933H0V24.5H11.5216V13.0933Z" fill="#00a4ef"></path>
+			<path d="M24.2418 13.0933H12.7202V24.5H24.2418V13.0933Z" fill="#ffb900"></path>
+		</svg>
+	
+		</a>
+	
+
+		<!-- Search -->
+		
+		<search-expander data-test-id="site-header-search-mobile" class="display-flex flex-grow-1 justify-content-flex-end">
+			<div hidden="" id="ms--site-header-search-mobile" class="display-flex align-items-center gap-xxs width-full padding-left-xxs">
+				
+		<form class="flex-grow-1" method="GET" role="search" id="ms--site-header-search-form-mobile" data-bi-name="site-header-search-form-mobile" name="site-header-search-form-mobile" aria-label="Suche" action="https://learn.microsoft.com/de-de/search/">
+			<div class="autocomplete display-block" data-bi-name="autocomplete"><!---->
+			<div class="field-body control ">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="site-header-search-autocomplete-input-mobile" data-test-id="site-header-search-autocomplete-input-mobile" class="autocomplete-input input 
+						
+						width-full" type="search" name="terms" aria-expanded="false" aria-owns="ax-1-listbox" aria-controls="ax-1-listbox" aria-activedescendant="" aria-label="Suche" aria-describedby="ms--site-header-search-autocomplete-input-mobile-description" placeholder="Suche" data-bi-name="site-header-search-autocomplete-input-mobile" pattern=".*">
+
+				
+				
+
+				<span hidden="" id="ms--site-header-search-autocomplete-input-mobile-description">
+					Vorschläge werden während der Eingabe gefiltert
+				</span>
+			</div>
+
+			<ul role="listbox" id="ax-1-listbox" data-test-id="site-header-search-autocomplete-input-mobile-listbox" class="autocomplete-suggestions is-vertically-scrollable padding-xxs " aria-label="Vorschläge" hidden="">
+				
+				
+			</ul>
+		<!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="">
+			
+			
+		</form>
+	
+				<button data-search-expander-trigger-close="" type="button" class="button button-clear inner-focus" aria-controls="ms--site-header-search-mobile" aria-label="Suche schließen" data-bi-name="site-header-search-close-mobile" data-test-id="site-header-search-close-mobile">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-navigate-close"></span>
+					</span>
+				</button>
+			</div>
+			<button data-search-expander-trigger-open="" type="button" class="button button-clear inner-focus" aria-controls="ms--site-header-search-mobile" aria-label="Suche öffnen" data-bi-name="site-header-search-open-mobile" data-test-id="site-header-search-open-mobile">
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-search"></span>
+				</span>
+			</button>
+		</search-expander>
+	
+
+		<!-- User avatar/Sign in -->
+		<!---->
+		<a href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#" data-bi-name="site-header-sign-in-mobile" data-test-id="site-header-sign-in-mobile" class="link-button font-size-sm flex-shrink-0 docs-sign-in auth-status-determined not-authenticated margin-right-xs margin-left-xxs">
+			Anmelden
+		</a>
+	 
+		<details data-bi-name="site-header-user-mobile" class="popover popover-right auth-status-determined authenticated margin-right-xs margin-left-xxs">
+			<summary data-bi-name="site-header-user-avatar" aria-label="Ihr Konto" data-test-id="site-header-user-mobile">
+				<div class="persona persona-sm">
+					<figure class="persona-avatar">
+						<img alt="" data-profile-property="avatarThumbnailUrl">
+					</figure>
+				</div>
+			</summary>
+			<div class="popover-content width-auto" data-bi-name="site-header-user-menu">
+				<div class="persona persona-sm">
+					<figure class="persona-avatar">
+						<img alt="" data-profile-property="avatarUrl" aria-labelledby="ms--user-display-name-mobile">
+					</figure>
+					<div class="persona-details" data-test-id="persona-detail-mobile">
+						<p class="persona-name" data-profile-property="displayName" id="ms--user-display-name-mobile"></p>
+						<p data-profile-property="upn"></p>
+					</div>
+				</div>
+				<ul class="padding-block-xs">
+					<li class="padding-bottom-xs">
+						<a data-profile-property="profileUrl" class="font-size-sm" data-bi-name="site-header-user-profile" href="https://learn.microsoft.com/de-de/users/me/activity/">
+							Profil
+						</a>
+					</li>
+					
+					<li>
+						<a data-profile-property="settingsUrl" class="font-size-sm" data-bi-name="site-header-user-settings" href="https://learn.microsoft.com/de-de/users/me/settings/">
+							Einstellungen
+						</a>
+					</li>
+				</ul>
+				<div class="border-top padding-top-xs">
+					<a class="docs-sign-out font-size-sm" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#" data-bi-name="site-header-sign-out-mobile" data-test-id="site-header-user-sign-out-mobile">
+						Abmelden
+					</a>
+				</div>
+			</div>
+		</details>
+	<!---->
+	<!----></div>
+				<div id="ms--primary-nav" class="site-header display-none display-flex-tablet" data-bi-name="L1-header" data-test-id="primary-header"><!---->
+		<!-- MS logo -->
+		
+		<a href="https://www.microsoft.com/" aria-label="Microsoft" itemprop="url" data-bi-name="site-header-microsoft-logo" data-test-id="site-header-microsoft-logo" class="site-header-logo ">
+			
+		<svg aria-hidden="true" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" itemprop="logo" itemscope="itemscope">
+			<path d="M11.5216 0.5H0V11.9067H11.5216V0.5Z" fill="#f25022"></path>
+			<path d="M24.2418 0.5H12.7202V11.9067H24.2418V0.5Z" fill="#7fba00"></path>
+			<path d="M11.5216 13.0933H0V24.5H11.5216V13.0933Z" fill="#00a4ef"></path>
+			<path d="M24.2418 13.0933H12.7202V24.5H24.2418V13.0933Z" fill="#ffb900"></path>
+		</svg>
+	
+		</a>
+	
+
+		<!-- Divider -->
+		<div class="site-header-divider"></div>
+
+		<!-- Brand -->
+		
+		<a class="site-header-brand" itemprop="url" href="https://learn.microsoft.com/de-de/" data-bi-name="site-header-brand-learn" data-test-id="site-header-brand">
+			<span><!---->Learn<!----></span>
+		</a>
+	
+
+		<div id="ms--search-expander-wrapper" class="display-flex justify-content-space-between flex-grow-1 align-items-center overflow-x-hidden height-full">
+			<!-- Main Nav -->
+			
+		<overflow-menu class="align-self-stretch" style="display: block; overflow: hidden; width: 100%;">
+			<nav class="site-header-nav" data-bi-name="primary-nav" data-overflow-menu-container="" aria-label="Global" style="visibility: visible; overflow: hidden;">
+				<button type="button" data-overflow-menu-prev-button="" data-bi-name="site-header-btn-prev" class="button button-clear button-sm inner-focus" hidden="" aria-label="Vorherige">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-chevron-left-light"></span>
+					</span>
+				</button>
+
+				
+		<ul class="display-flex gap-xxs-desktop">
+			<!---->
+			<li aria-setsize="4" aria-posinset="1">
+				<panel-controller data-bi-name="site-header-btn-1-documentation">
+					<button type="button" aria-expanded="false" class="site-header-button" data-overflow-menu-item="" aria-controls="ms--panel-1" data-test-id="site-header-panel-controller-1" style="white-space: nowrap;">
+						<span><!---->Dokumentation<!----></span>
+						<span class="icon expanded-indicator" aria-hidden="true">
+							<span class="docon docon-chevron-down-light"></span>
+						</span>
+					</button>
+					<div class="site-header-panel" hidden="" id="ms--panel-1" data-bi-name="panel-1-documentation" data-test-id="site-header-panel-1">
+						
+		<div class="site-header-panel-content">
+			<ul class="site-header-panel-links">
+				<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/docs/" data-bi-name="panel-link-1-all-product-documentation">
+						Alle Produktdokumentationen
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/azure/?product=popular" data-bi-name="panel-link-2-azure-documentation">
+						Azure-Dokumentation
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/dynamics365/" data-bi-name="panel-link-3-dynamics-365-documentation">
+						Dynamics 365-Dokumentation
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/copilot/" data-bi-name="panel-link-4-microsoft-copilot-documentation">
+						Microsoft Copilot-Dokumentation
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/microsoft-365/" data-bi-name="panel-link-5-microsoft-365-documentation">
+						Microsoft 365-Dokumentation
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/power-platform/" data-bi-name="panel-link-6-power-platform-documentation">
+						Dokumentation zu Power Platform
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/samples/" data-bi-name="panel-link-7-code-samples">
+						Codebeispiele
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/troubleshoot/" data-bi-name="panel-link-8-troubleshooting-documentation">
+						Dokumentation zur Problembehandlung
+					</a>
+				</li>
+			<!---->
+			</ul>
+			
+		</div>
+		
+			<section class="site-header-panel-featured-content"><!----><!---->
+				<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="featured-card-1-ai-tour">
+					<div class="card-content">
+						<p class="card-supertitle line-clamp-2 line-height-normal"><!---->Kostenloser Beitritt. Fordern Sie die Teilnahme an.<!----></p>
+						<a class="card-title color-text background-color-transparent stretched-link" href="https://aitour.microsoft.com/?wt.mc_id=itour26_learnmarketingspot_wwl">
+							Microsoft AI Tour
+						</a>
+						<p class="card-content-description line-clamp-2"><!---->Führen Sie Ihr Unternehmen an die vorderste Front der KI.<!----></p>
+					</div>
+				</article>
+			<!----><!----></section>
+		
+	
+					</div>
+				</panel-controller>
+			</li>
+		<!---->
+			<li aria-setsize="4" aria-posinset="2">
+				<panel-controller data-bi-name="site-header-btn-2-training">
+					<button type="button" aria-expanded="false" class="site-header-button" data-overflow-menu-item="" aria-controls="ms--panel-2" data-test-id="site-header-panel-controller-2" style="white-space: nowrap;">
+						<span><!---->Schulung &amp; Labore<!----></span>
+						<span class="icon expanded-indicator" aria-hidden="true">
+							<span class="docon docon-chevron-down-light"></span>
+						</span>
+					</button>
+					<div class="site-header-panel" hidden="" id="ms--panel-2" data-bi-name="panel-2-training" data-test-id="site-header-panel-2">
+						
+		<div class="site-header-panel-content">
+			<ul class="site-header-panel-links">
+				<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/training/" data-bi-name="panel-link-1-training">
+						Alle Schulungen
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/training/browse/?products=azure" data-bi-name="panel-link-2-azure-training">
+						Azure-Schulung
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/training/browse/?products=dynamics-365" data-bi-name="panel-link-3-dynamics-365-training">
+						Dynamics 365-Schulung
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/training/browse/?products=ms-copilot" data-bi-name="panel-link-4-microsoft-copilot-training">
+						Microsoft Copilot-Schulung
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/training/browse/?products=m365" data-bi-name="panel-link-5-microsoft-365-training">
+						Microsoft 365-Schulung
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/training/browse/?products=power-platform" data-bi-name="panel-link-6-microsoft-power-platform-training">
+						Microsoft Power Platform-Schulung
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/labs/" data-bi-name="panel-link-7-labs">
+						Labs
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/credentials/" data-bi-name="panel-link-8-credentials">
+						Anmeldeinformationen
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/training/career-paths/" data-bi-name="panel-link-9-career-paths">
+						Karrierewege
+					</a>
+				</li>
+			<!---->
+			</ul>
+			
+		</div>
+		
+			<section class="site-header-panel-featured-content"><!----><!---->
+				<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="featured-card-1-ai-tour">
+					<div class="card-content">
+						<p class="card-supertitle line-clamp-2 line-height-normal"><!---->Kostenloser Beitritt. Fordern Sie die Teilnahme an.<!----></p>
+						<a class="card-title color-text background-color-transparent stretched-link" href="https://aitour.microsoft.com/?wt.mc_id=itour26_learnmarketingspot_wwl">
+							Microsoft AI Tour
+						</a>
+						<p class="card-content-description line-clamp-2"><!---->Führen Sie Ihr Unternehmen an die vorderste Front der KI.<!----></p>
+					</div>
+				</article>
+			<!----><!----></section>
+		
+	
+					</div>
+				</panel-controller>
+			</li>
+		<!---->
+			<li aria-setsize="4" aria-posinset="3">
+				<panel-controller data-bi-name="site-header-btn-3-qna">
+					<button type="button" aria-expanded="false" class="site-header-button" data-overflow-menu-item="" aria-controls="ms--panel-3" data-test-id="site-header-panel-controller-3" style="white-space: nowrap;">
+						<span><!---->Fragen und Antworten<!----></span>
+						<span class="icon expanded-indicator" aria-hidden="true">
+							<span class="docon docon-chevron-down-light"></span>
+						</span>
+					</button>
+					<div class="site-header-panel" hidden="" id="ms--panel-3" data-bi-name="panel-3-qna" data-test-id="site-header-panel-3">
+						
+		<div class="site-header-panel-content">
+			<ul class="site-header-panel-links">
+				<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/answers/questions/ask/" data-bi-name="panel-link-1-ask-a-question">
+						Fragen stellen
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/answers/tags/133/azure/" data-bi-name="panel-link-2-azure-questions">
+						Azure-Fragen
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/answers/tags/60/windows/" data-bi-name="panel-link-3-windows-questions">
+						Windows-Fragen
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/answers/tags/9/m365/" data-bi-name="panel-link-4-m365-questions">
+						Fragen zu Microsoft 365
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/answers/tags/131/office-outlook/" data-bi-name="panel-link-5-microsoft-outlook-questions">
+						Fragen zu Microsoft Outlook
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/answers/tags/108/office-teams/" data-bi-name="panel-link-6-microsoft-teams-questions">
+						Fragen zu Microsoft Teams
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/answers/tags/" data-bi-name="panel-link-7-popular-tags">
+						Beliebte Tags
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block text-align-left font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="https://learn.microsoft.com/de-de/answers/questions/" data-bi-name="panel-link-8-all-questions">
+						Alle Fragen
+					</a>
+				</li>
+			<!---->
+			</ul>
+			
+		</div>
+		
+			<section class="site-header-panel-featured-content"><!----><!---->
+				<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="featured-card-1-ai-tour">
+					<div class="card-content">
+						<p class="card-supertitle line-clamp-2 line-height-normal"><!---->Kostenloser Beitritt. Fordern Sie die Teilnahme an.<!----></p>
+						<a class="card-title color-text background-color-transparent stretched-link" href="https://aitour.microsoft.com/?wt.mc_id=itour26_learnmarketingspot_wwl">
+							Microsoft AI Tour
+						</a>
+						<p class="card-content-description line-clamp-2"><!---->Führen Sie Ihr Unternehmen an die vorderste Front der KI.<!----></p>
+					</div>
+				</article>
+			<!----><!----></section>
+		
+	
+					</div>
+				</panel-controller>
+			</li>
+		<!---->
+			<li aria-setsize="4" aria-posinset="4">
+				<panel-controller data-bi-name="site-header-btn-4-topics">
+					<button type="button" aria-expanded="false" class="site-header-button" data-overflow-menu-item="" aria-controls="ms--panel-4" data-test-id="site-header-panel-controller-4" style="white-space: nowrap;">
+						<span><!---->Themen<!----></span>
+						<span class="icon expanded-indicator" aria-hidden="true">
+							<span class="docon docon-chevron-down-light"></span>
+						</span>
+					</button>
+					<div class="site-header-panel" hidden="" id="ms--panel-4" data-bi-name="panel-4-topics" data-test-id="site-header-panel-4">
+						
+		<div class="site-header-panel-content">
+			<ul class="site-header-panel-cards">
+				<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-1-ai">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/de-de/ai/">
+								Künstliche Intelligenz
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->Lernhub zum Aufbau von KI-Fähigkeiten<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-2-compliance">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/de-de/compliance/">
+								Kompatibilität
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->Complianceressourcen, die Sie für die ersten Schritte mit Ihrem Unternehmen benötigen<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-3-devops">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/de-de/devops/">
+								DevOps
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->DevOps-Methoden, Git-Versionssteuerung und Agile-Methoden<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-4-microsoft-learn-for-organizations">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/de-de/training/organizations/">
+								Lernen für Unternehmen
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->Kuratierte Angebote von Microsoft, um die technischen Fähigkeiten Ihres Teams zu steigern<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-5-platform-engineering">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/de-de/platform-engineering/">
+								Plattformentwicklung
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->Tools von Microsoft und anderen, um personalisierte Entwickleroberflächen zu erstellen<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-6-security">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/de-de/security/">
+								Sicherheit
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->Leitfaden zur Bewältigung von Sicherheitsproblemen<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-7-assessments">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/de-de/assessments/">
+								Bewertungen
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->Interaktive Anleitungen mit benutzerdefinierten Empfehlungen<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-8-student-hub">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/de-de/training/student-hub/">
+								Student Hub
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->Selbststudium und interaktives Training für Schüler/Studenten<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-9-educator-center">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="https://learn.microsoft.com/de-de/training/educator-center/">
+								Pädagogenzentrum
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->Ressourcen für Lehrkräfte, um technische Innovationen in ihrem Klassenzimmer zu bringen<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+			</ul>
+			
+		</div>
+		
+			<section class="site-header-panel-featured-content"><!----><!---->
+				<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="featured-card-1-ai-tour">
+					<div class="card-content">
+						<p class="card-supertitle line-clamp-2 line-height-normal"><!---->Kostenloser Beitritt. Fordern Sie die Teilnahme an.<!----></p>
+						<a class="card-title color-text background-color-transparent stretched-link" href="https://aitour.microsoft.com/?wt.mc_id=itour26_learnmarketingspot_wwl">
+							Microsoft AI Tour
+						</a>
+						<p class="card-content-description line-clamp-2"><!---->Führen Sie Ihr Unternehmen an die vorderste Front der KI.<!----></p>
+					</div>
+				</article>
+			<!----><!----></section>
+		
+	
+					</div>
+				</panel-controller>
+			</li>
+		<!---->
+		</ul>
+	
+
+				<button type="button" data-overflow-menu-next-button="" data-bi-name="site-header-btn-next" class="button button-clear button-sm inner-focus margin-left-auto" hidden="" aria-label="Nächste">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-chevron-right-light"></span>
+					</span>
+				</button>
+			</nav>
+		</overflow-menu>
+	
+
+			<!-- Search -->
+			
+		<search-expander data-test-id="site-header-search" class="flex-grow-1 margin-left-xxs">
+			<div hidden="" id="ms--site-header-search" class="display-flex align-items-center gap-xxs ">
+				
+		<form class="flex-grow-1" method="GET" role="search" id="ms--site-header-search-form" data-bi-name="site-header-search-form" name="site-header-search-form" aria-label="Suche" action="https://learn.microsoft.com/de-de/search/">
+			<div class="autocomplete display-block" data-bi-name="autocomplete"><!---->
+			<div class="field-body control ">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="site-header-search-autocomplete-input" data-test-id="site-header-search-autocomplete-input" class="autocomplete-input input input-sm
+						
+						width-full" type="search" name="terms" aria-expanded="false" aria-owns="ax-0-listbox" aria-controls="ax-0-listbox" aria-activedescendant="" aria-label="Suche" aria-describedby="ms--site-header-search-autocomplete-input-description" placeholder="Suche" data-bi-name="site-header-search-autocomplete-input" pattern=".*">
+
+				
+				
+
+				<span hidden="" id="ms--site-header-search-autocomplete-input-description">
+					Vorschläge werden während der Eingabe gefiltert
+				</span>
+			</div>
+
+			<ul role="listbox" id="ax-0-listbox" data-test-id="site-header-search-autocomplete-input-listbox" class="autocomplete-suggestions is-vertically-scrollable padding-xxs " aria-label="Vorschläge" hidden="">
+				
+				
+			</ul>
+		<!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="">
+			
+			
+		</form>
+	
+				<button data-search-expander-trigger-close="" type="button" class="button button-clear inner-focus" aria-controls="ms--site-header-search" aria-label="Suche schließen" data-bi-name="site-header-search-close" data-test-id="site-header-search-close">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-navigate-close"></span>
+					</span>
+				</button>
+			</div>
+			<button data-search-expander-trigger-open="" type="button" class="button button-clear inner-focus" aria-controls="ms--site-header-search" aria-label="Suche öffnen" data-bi-name="site-header-search-open" data-test-id="site-header-search-open">
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-search"></span>
+				</span>
+			</button>
+		</search-expander>
+	
+		</div>
+
+		<!-- User avatar/Sign in -->
+		<!---->
+		<a href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#" data-bi-name="site-header-sign-in" data-test-id="site-header-sign-in" class="link-button font-size-sm flex-shrink-0 docs-sign-in auth-status-determined not-authenticated ">
+			Anmelden
+		</a>
+	 
+		<details data-bi-name="site-header-user" class="popover popover-right auth-status-determined authenticated ">
+			<summary data-bi-name="site-header-user-avatar" aria-label="Ihr Konto" data-test-id="site-header-user">
+				<div class="persona ">
+					<figure class="persona-avatar">
+						<img alt="" data-profile-property="avatarThumbnailUrl">
+					</figure>
+				</div>
+			</summary>
+			<div class="popover-content width-auto" data-bi-name="site-header-user-menu">
+				<div class="persona ">
+					<figure class="persona-avatar">
+						<img alt="" data-profile-property="avatarUrl" aria-labelledby="ms--user-display-name">
+					</figure>
+					<div class="persona-details" data-test-id="persona-detail">
+						<p class="persona-name" data-profile-property="displayName" id="ms--user-display-name"></p>
+						<p data-profile-property="upn"></p>
+					</div>
+				</div>
+				<ul class="padding-block-xs">
+					<li class="padding-bottom-xs">
+						<a data-profile-property="profileUrl" class="font-size-sm" data-bi-name="site-header-user-profile" href="https://learn.microsoft.com/de-de/users/me/activity/">
+							Profil
+						</a>
+					</li>
+					
+					<li>
+						<a data-profile-property="settingsUrl" class="font-size-sm" data-bi-name="site-header-user-settings" href="https://learn.microsoft.com/de-de/users/me/settings/">
+							Einstellungen
+						</a>
+					</li>
+				</ul>
+				<div class="border-top padding-top-xs">
+					<a class="docs-sign-out font-size-sm" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#" data-bi-name="site-header-sign-out" data-test-id="site-header-user-sign-out">
+						Abmelden
+					</a>
+				</div>
+			</div>
+		</details>
+	<!---->
+	<!----></div>
+				<div id="ms--secondary-nav" class="display-none display-flex-tablet" data-bi-name="L2-header" data-test-id="secondary-header"><!----><div class="site-header width-full"><!----> 
+		<a class="site-header-brand font-size-h6 padding-inline-none margin-right-xxs" itemprop="url" href="https://learn.microsoft.com/de-de/azure/" data-bi-name="secondary-nav-link-category-azure">
+			<span>
+				Azure
+				
+			</span>
+		</a>
+	 
+		
+		<nav class="site-header-nav width-auto" data-bi-name="secondary-nav" aria-label="Website">
+			<ul class="display-flex">
+				<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  site-header-button-icon-chevron" aria-controls="bx-35" data-bi-name="secondary-nav-btn-1-products" value="undefined">
+				<span><!---->Products<!----></span>
+				<span aria-hidden="true" class="icon expanded-indicator ">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-35" aria-label="Products" data-bi-name="secondary-nav-menu-1-products">
+				<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-36" data-bi-name="secondary-nav-btn-1-popular-products" value="undefined">
+				<span><!---->Beliebte Produkte<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-36" aria-label="Beliebte Produkte" data-bi-name="secondary-nav-menu-1-popular-products">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/ai-foundry/" data-bi-name="secondary-nav-link-1-microsoft-foundry">
+						<span><!---->Microsoft Foundry<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/app-service/" data-bi-name="secondary-nav-link-2-azure-app-service">
+						<span><!---->Azure App Service<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/databricks/" data-bi-name="secondary-nav-link-3-azure-databricks">
+						<span><!---->Azure Databricks<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/devops/" data-bi-name="secondary-nav-link-4-azure-devops">
+						<span><!---->Azure DevOps<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/azure-functions/" data-bi-name="secondary-nav-link-5-azure-functions">
+						<span><!---->Azure Functions<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/azure-monitor/" data-bi-name="secondary-nav-link-6-azure-monitor">
+						<span><!---->Azure Monitor<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/virtual-machines/" data-bi-name="secondary-nav-link-7-azure-virtual-machines">
+						<span><!---->Azure-virtuelle Maschinen<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-37" data-bi-name="secondary-nav-btn-2-popular-categories" value="undefined">
+				<span><!---->Beliebte Kategorien<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-37" aria-label="Beliebte Kategorien" data-bi-name="secondary-nav-menu-2-popular-categories">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/?product=compute" data-bi-name="secondary-nav-link-1-compute">
+						<span><!---->Compute<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/?product=networking" data-bi-name="secondary-nav-link-2-networking">
+						<span><!---->Networking<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/?product=storage" data-bi-name="secondary-nav-link-3-storage">
+						<span><!---->Storage<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/?product=ai-machine-learning" data-bi-name="secondary-nav-link-4-ai-and-machine-learning">
+						<span><!---->KI &amp; Machine Learning<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/?product=analytics" data-bi-name="secondary-nav-link-5-analytics">
+						<span><!---->Analytics<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/?product=databases" data-bi-name="secondary-nav-link-6-databases">
+						<span><!---->Databases<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/?product=security" data-bi-name="secondary-nav-link-7-security">
+						<span><!---->Security<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/" data-bi-name="secondary-nav-link-3-view-all-products">
+						<span><!---->Alle Produkte anzeigen<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  site-header-button-icon-chevron" aria-controls="bx-38" data-bi-name="secondary-nav-btn-2-architecture" value="undefined">
+				<span><!---->Architecture<!----></span>
+				<span aria-hidden="true" class="icon expanded-indicator ">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-38" aria-label="Architecture" data-bi-name="secondary-nav-menu-2-architecture">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/cloud-adoption-framework/" data-bi-name="secondary-nav-link-1-cloud-adoption-framework">
+						<span><!---->Rahmenwerk zur Cloud-Einführung<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/well-architected/" data-bi-name="secondary-nav-link-2-well-architected-framework">
+						<span><!----> Well-Architected Framework<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/architecture/" data-bi-name="secondary-nav-link-3-azure-architecture-center">
+						<span><!---->Azure Architecture Center<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  site-header-button-icon-chevron" aria-controls="bx-39" data-bi-name="secondary-nav-btn-3-develop" value="undefined">
+				<span><!---->Develop<!----></span>
+				<span aria-hidden="true" class="icon expanded-indicator ">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-39" aria-label="Develop" data-bi-name="secondary-nav-menu-3-develop">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/developer/python/" data-bi-name="secondary-nav-link-1-python">
+						<span><!---->Python<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/dotnet/azure/" data-bi-name="secondary-nav-link-2-dotnet">
+						<span><!---->.NET<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/developer/javascript/" data-bi-name="secondary-nav-link-3-javascript">
+						<span><!---->JavaScript<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/developer/java/" data-bi-name="secondary-nav-link-4-java">
+						<span><!---->Java<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/powershell/azure/" data-bi-name="secondary-nav-link-5-powershell">
+						<span><!---->PowerShell<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/cli/azure/" data-bi-name="secondary-nav-link-6-azure-cli">
+						<span><!---->Azure CLI<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/developer/" data-bi-name="secondary-nav-link-7-view-all-developer-resources">
+						<span><!---->Alle Entwicklerressourcen anzeigen<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  site-header-button-icon-chevron" aria-controls="bx-40" data-bi-name="secondary-nav-btn-4-learn-azure" value="undefined">
+				<span><!---->Azure lernen<!----></span>
+				<span aria-hidden="true" class="icon expanded-indicator ">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-40" aria-label="Azure lernen" data-bi-name="secondary-nav-menu-4-learn-azure">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/assessments/1c032171-8ca0-4032-8962-a38a5cc424a8/" data-bi-name="secondary-nav-link-1-start-your-ai-learning-assessment">
+						<span><!---->Starten Ihrer KI-Lernbewertung<!----></span>
+					</a>
+				</li>
+		  <!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-41" data-bi-name="secondary-nav-btn-2-top-learning-paths" value="undefined">
+				<span><!---->Top-Lernpfade<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-41" aria-label="Top-Lernpfade" data-bi-name="secondary-nav-menu-2-top-learning-paths">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/training/paths/microsoft-azure-fundamentals-describe-cloud-concepts/" data-bi-name="secondary-nav-link-1-cloud-concepts">
+						<span><!---->Cloudkonzepte<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/training/paths/get-started-with-artificial-intelligence-on-azure/" data-bi-name="secondary-nav-link-2-ai-fundamentals">
+						<span><!---->KI-Grundlagen<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/training/paths/introduction-generative-ai/" data-bi-name="secondary-nav-link-3-intro-to-generative-ai">
+						<span><!---->Einführung in generative KI<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/training/paths/azure-fundamentals-describe-azure-architecture-services/" data-bi-name="secondary-nav-link-4-azure-architecture-fundamentals">
+						<span><!---->Grundlagen der Azure-Architektur<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/credentials/browse/?products=azure" data-bi-name="secondary-nav-link-3-earn-credentials">
+						<span><!---->Anmeldeinformationen sammeln<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/training/browse/?products=azure&amp;resource_type=course" data-bi-name="secondary-nav-link-4-instructor-led-courses">
+						<span><!---->Kursleitergeführte Kurse<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/training/azure/" data-bi-name="secondary-nav-link-5-view-all-training">
+						<span><!---->Alle Schulungen anzeigen<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+				<li>
+					<a data-test-id="header-link-troubleshooting" class="has-external-link-indicator site-header-button " href="https://learn.microsoft.com/de-de/troubleshoot/azure/" data-bi-name="secondary-nav-link-5-troubleshooting">
+						<span><!---->Troubleshooting<!----></span>
+					</a>
+				</li>
+		  <!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  site-header-button-icon-chevron" aria-controls="bx-42" data-bi-name="secondary-nav-btn-6-resources" value="undefined">
+				<span><!---->Resources<!----></span>
+				<span aria-hidden="true" class="icon expanded-indicator ">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-42" aria-label="Resources" data-bi-name="secondary-nav-menu-6-resources">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://azure.microsoft.com/get-started" data-bi-name="secondary-nav-link-1-product-overview">
+						<span><!---->Produktübersicht<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://azure.microsoft.com/updates" data-bi-name="secondary-nav-link-2-azure-updates">
+						<span><!---->Azure-Updates<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://azure.microsoft.com/pricing/" data-bi-name="secondary-nav-link-3-pricing-information">
+						<span><!---->Preisinformationen<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/cost-management-billing/" data-bi-name="secondary-nav-link-4-cost-management-billing">
+						<span><!---->Kostenverwaltung und Abrechnung<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://azure.microsoft.com/blog/" data-bi-name="secondary-nav-link-5-latest-blog-posts">
+						<span><!---->Neueste Blogbeiträge<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://azure.microsoft.com/support/options/" data-bi-name="secondary-nav-link-6-support-options">
+						<span><!---->Supportoptionen<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown" hidden="">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  site-header-button-icon-chevron" aria-controls="bx-43" data-bi-name="secondary-nav-btn-more" value="undefined">
+				<span><!---->Mehr<!----></span>
+				<span aria-hidden="true" class="icon expanded-indicator ">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-43" aria-label="Mehr" data-bi-name="secondary-nav-menu-more">
+				<!---->
+		<li class="dropdown" hidden="">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-44" data-bi-name="secondary-nav-btn-1-products" value="undefined">
+				<span><!---->Products<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-44" aria-label="Products" data-bi-name="secondary-nav-menu-1-products">
+				<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-45" data-bi-name="secondary-nav-btn-1-popular-products" value="undefined">
+				<span><!---->Beliebte Produkte<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-45" aria-label="Beliebte Produkte" data-bi-name="secondary-nav-menu-1-popular-products">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/ai-foundry/" data-bi-name="secondary-nav-link-1-microsoft-foundry">
+						<span><!---->Microsoft Foundry<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/app-service/" data-bi-name="secondary-nav-link-2-azure-app-service">
+						<span><!---->Azure App Service<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/databricks/" data-bi-name="secondary-nav-link-3-azure-databricks">
+						<span><!---->Azure Databricks<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/devops/" data-bi-name="secondary-nav-link-4-azure-devops">
+						<span><!---->Azure DevOps<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/azure-functions/" data-bi-name="secondary-nav-link-5-azure-functions">
+						<span><!---->Azure Functions<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/azure-monitor/" data-bi-name="secondary-nav-link-6-azure-monitor">
+						<span><!---->Azure Monitor<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/virtual-machines/" data-bi-name="secondary-nav-link-7-azure-virtual-machines">
+						<span><!---->Azure-virtuelle Maschinen<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-46" data-bi-name="secondary-nav-btn-2-popular-categories" value="undefined">
+				<span><!---->Beliebte Kategorien<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-46" aria-label="Beliebte Kategorien" data-bi-name="secondary-nav-menu-2-popular-categories">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/?product=compute" data-bi-name="secondary-nav-link-1-compute">
+						<span><!---->Compute<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/?product=networking" data-bi-name="secondary-nav-link-2-networking">
+						<span><!---->Networking<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/?product=storage" data-bi-name="secondary-nav-link-3-storage">
+						<span><!---->Storage<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/?product=ai-machine-learning" data-bi-name="secondary-nav-link-4-ai-and-machine-learning">
+						<span><!---->KI &amp; Machine Learning<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/?product=analytics" data-bi-name="secondary-nav-link-5-analytics">
+						<span><!---->Analytics<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/?product=databases" data-bi-name="secondary-nav-link-6-databases">
+						<span><!---->Databases<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/?product=security" data-bi-name="secondary-nav-link-7-security">
+						<span><!---->Security<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/" data-bi-name="secondary-nav-link-3-view-all-products">
+						<span><!---->Alle Produkte anzeigen<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown" hidden="">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-47" data-bi-name="secondary-nav-btn-2-architecture" value="undefined">
+				<span><!---->Architecture<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-47" aria-label="Architecture" data-bi-name="secondary-nav-menu-2-architecture">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/cloud-adoption-framework/" data-bi-name="secondary-nav-link-1-cloud-adoption-framework">
+						<span><!---->Rahmenwerk zur Cloud-Einführung<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/well-architected/" data-bi-name="secondary-nav-link-2-well-architected-framework">
+						<span><!----> Well-Architected Framework<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/architecture/" data-bi-name="secondary-nav-link-3-azure-architecture-center">
+						<span><!---->Azure Architecture Center<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown" hidden="">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-48" data-bi-name="secondary-nav-btn-3-develop" value="undefined">
+				<span><!---->Develop<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-48" aria-label="Develop" data-bi-name="secondary-nav-menu-3-develop">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/developer/python/" data-bi-name="secondary-nav-link-1-python">
+						<span><!---->Python<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/dotnet/azure/" data-bi-name="secondary-nav-link-2-dotnet">
+						<span><!---->.NET<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/developer/javascript/" data-bi-name="secondary-nav-link-3-javascript">
+						<span><!---->JavaScript<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/developer/java/" data-bi-name="secondary-nav-link-4-java">
+						<span><!---->Java<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/powershell/azure/" data-bi-name="secondary-nav-link-5-powershell">
+						<span><!---->PowerShell<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/cli/azure/" data-bi-name="secondary-nav-link-6-azure-cli">
+						<span><!---->Azure CLI<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/developer/" data-bi-name="secondary-nav-link-7-view-all-developer-resources">
+						<span><!---->Alle Entwicklerressourcen anzeigen<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown" hidden="">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-49" data-bi-name="secondary-nav-btn-4-learn-azure" value="undefined">
+				<span><!---->Azure lernen<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-49" aria-label="Azure lernen" data-bi-name="secondary-nav-menu-4-learn-azure">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/assessments/1c032171-8ca0-4032-8962-a38a5cc424a8/" data-bi-name="secondary-nav-link-1-start-your-ai-learning-assessment">
+						<span><!---->Starten Ihrer KI-Lernbewertung<!----></span>
+					</a>
+				</li>
+		  <!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-50" data-bi-name="secondary-nav-btn-2-top-learning-paths" value="undefined">
+				<span><!---->Top-Lernpfade<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-50" aria-label="Top-Lernpfade" data-bi-name="secondary-nav-menu-2-top-learning-paths">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/training/paths/microsoft-azure-fundamentals-describe-cloud-concepts/" data-bi-name="secondary-nav-link-1-cloud-concepts">
+						<span><!---->Cloudkonzepte<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/training/paths/get-started-with-artificial-intelligence-on-azure/" data-bi-name="secondary-nav-link-2-ai-fundamentals">
+						<span><!---->KI-Grundlagen<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/training/paths/introduction-generative-ai/" data-bi-name="secondary-nav-link-3-intro-to-generative-ai">
+						<span><!---->Einführung in generative KI<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/training/paths/azure-fundamentals-describe-azure-architecture-services/" data-bi-name="secondary-nav-link-4-azure-architecture-fundamentals">
+						<span><!---->Grundlagen der Azure-Architektur<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/credentials/browse/?products=azure" data-bi-name="secondary-nav-link-3-earn-credentials">
+						<span><!---->Anmeldeinformationen sammeln<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/training/browse/?products=azure&amp;resource_type=course" data-bi-name="secondary-nav-link-4-instructor-led-courses">
+						<span><!---->Kursleitergeführte Kurse<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/training/azure/" data-bi-name="secondary-nav-link-5-view-all-training">
+						<span><!---->Alle Schulungen anzeigen<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+				<li hidden="">
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/troubleshoot/azure/" data-bi-name="secondary-nav-link-5-troubleshooting">
+						<span><!---->Troubleshooting<!----></span>
+					</a>
+				</li>
+		  <!---->
+		<li class="dropdown" hidden="">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-51" data-bi-name="secondary-nav-btn-6-resources" value="undefined">
+				<span><!---->Resources<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-51" aria-label="Resources" data-bi-name="secondary-nav-menu-6-resources">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://azure.microsoft.com/get-started" data-bi-name="secondary-nav-link-1-product-overview">
+						<span><!---->Produktübersicht<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://azure.microsoft.com/updates" data-bi-name="secondary-nav-link-2-azure-updates">
+						<span><!---->Azure-Updates<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://azure.microsoft.com/pricing/" data-bi-name="secondary-nav-link-3-pricing-information">
+						<span><!---->Preisinformationen<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://learn.microsoft.com/de-de/azure/cost-management-billing/" data-bi-name="secondary-nav-link-4-cost-management-billing">
+						<span><!---->Kostenverwaltung und Abrechnung<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://azure.microsoft.com/blog/" data-bi-name="secondary-nav-link-5-latest-blog-posts">
+						<span><!---->Neueste Blogbeiträge<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://azure.microsoft.com/support/options/" data-bi-name="secondary-nav-link-6-support-options">
+						<span><!---->Supportoptionen<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+			</ul>
+		</li>
+	<!---->
+			</ul>
+		</nav>
+	
+		<span class="nav-bar-spacer"></span>
+		 <div class="buttons"><!---->
+		<a data-test-id="navbar-primary-cta" class="button button-sm button-primary " href="https://portal.azure.com/" data-bi-name="secondary-nav-cta-secondary-portal">
+			Portal
+		</a>
+	 
+		<a data-test-id="navbar-primary-cta" class="button button-sm button-primary button-filled margin-right-none" href="https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn" data-bi-name="secondary-nav-cta-primary-get-started-with-azure">
+			Erste Schritte mit Azure
+		</a>
+	<!----></div>  
+	 <!----></div><!----></div>
+			</div>
+			
+		<!-- banner -->
+		<div data-banner="">
+			<div id="disclaimer-holder"></div>
+			
+		</div>
+		<!-- banner end -->
+	
+		</div>
+	</header>
+				 <section id="layout-body-menu" class="layout-body-menu display-flex" data-bi-name="menu">
+					
+		<div id="left-container" class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full" data-toc-container="true" data-toc-collapsed="false">
+			<!-- Regular TOC content (default) -->
+			
+			<!-- Collapsible TOC content (hidden by default) -->
+			<div id="ms--toc-content-collapsible" class="height-full">
+				<nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column" aria-label="Primär" data-bi-name="left-toc" role="navigation" style="top: 24px; height: calc(-103px + 100vh); max-height: 12780.9px;">
+					<div id="ms--collapsible-toc-header" class="display-flex flex-direction-row-reverse justify-content-space-between align-items-center margin-bottom-xxs">
+						<button type="button" class="button button-clear inner-focus" data-collapsible-toc-toggle="" aria-expanded="true" aria-controls="ms--collapsible-toc-content" aria-label="Reduzieren" title="Reduzieren" data-bi-name="toc-collapse">
+							<span class="icon font-size-xxl" aria-hidden="true">
+								<span class="docon docon-panel-left-contract"></span>
+							</span>
+						</button>
+						<div id="ms--collapsible-toc-moniker-slot" class="flex-grow-1"></div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	
+			  </section>
+
+				<main id="main" role="main" class="layout-body-main " data-bi-name="content" lang="de-de" dir="ltr">
+					
+			<div id="ms--content-header" class="content-header default-focus border-bottom-none" data-bi-name="content-header">
+		<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+			<button type="button" class="contents-button button button-sm margin-right-xxs" data-bi-name="contents-expand" aria-haspopup="true" data-contents-button="">
+				<span class="icon" aria-hidden="true"><span class="docon docon-menu"></span></span>
+				<span class="contents-expand-title"> Inhaltsverzeichnis </span>
+			</button>
+			<button type="button" class="ap-collapse-behavior ap-expanded button button-sm" data-bi-name="ap-collapse" aria-controls="action-panel">
+				<span class="icon" aria-hidden="true"><span class="docon docon-exit-mode"></span></span>
+				<span>Editormodus beenden</span>
+			</button>
+		</div>
+	</div>
+			<div data-main-column="" class="padding-sm padding-top-none padding-top-sm-tablet">
+				<div>
+					
+		<div id="article-header" class="background-color-body margin-bottom-xs display-none-print">
+			<div class="display-flex align-items-center justify-content-space-between">
+				
+		<details id="article-header-breadcrumbs-overflow-popover" class="popover" data-for="article-header-breadcrumbs" hidden="">
+			<summary class="button button-clear button-primary button-sm inner-focus" aria-label="Alle Breadcrumbs">
+				<span class="icon">
+					<span class="docon docon-more"></span>
+				</span>
+			</summary>
+			<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none"><!---->
+			<nav>
+				<ol class="list-style-none">
+					<!---->
+								<li class="line-clamp-1">
+									<a class="display-block inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/de-de/">
+										Learn
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/de-de/azure/">
+										Azure
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/de-de/azure/iot/">
+										Internet der Dinge
+									</a>
+								</li>
+							<!---->
+				</ol>
+			</nav>
+			
+		<!----></div>
+		</details>
+
+		<bread-crumbs id="article-header-breadcrumbs" role="group" aria-label="Breadcrumbs" data-test-id="article-header-breadcrumbs" class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs" style="display: block; white-space: nowrap; overflow: hidden;"><!---->
+			<nav>
+				<ol class="breadcrumbs">
+					<!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="">
+									<a href="https://learn.microsoft.com/de-de/"><!---->Learn<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="">
+									<a href="https://learn.microsoft.com/de-de/azure/"><!---->Azure<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="" style="">
+									<a href="https://learn.microsoft.com/de-de/azure/iot/" style=""><!---->Internet der Dinge<!----></a>
+								</li>
+							<!---->
+				</ol>
+			</nav>
+		<!----></bread-crumbs>
+	 
+		<div id="article-header-page-actions" class="margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch">
+			
+		<button class="button button-sm border-none inner-focus display-none-tablet flex-shrink-0 " data-bi-name="ask-learn-assistant-entry" data-test-id="ask-learn-assistant-modal-entry-mobile" data-ask-learn-modal-entry="" type="button" style="min-width: max-content;" aria-expanded="false" aria-label="Learn fragen" hidden="">
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button class="button button-sm display-none display-inline-flex-tablet display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn " data-bi-name="ask-learn-assistant-entry" data-test-id="ask-learn-assistant-modal-entry-tablet" data-ask-learn-modal-entry="" type="button" style="min-width: max-content;" aria-expanded="false" hidden="">
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Learn fragen</span>
+		</button>
+		<button class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn " data-bi-name="ask-learn-assistant-entry" data-test-id="ask-learn-assistant-flyout-entry" data-ask-learn-flyout-entry="" data-flyout-button="toggle" type="button" style="min-width: max-content;" aria-expanded="false" aria-controls="ask-learn-flyout" hidden="">
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Learn fragen</span>
+		</button>
+	 
+		<button type="button" id="ms--focus-mode-button" data-focus-mode="" data-bi-name="focus-mode-entry" class="button button-sm flex-shrink-0 margin-right-xxs display-none display-inline-flex-desktop">
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-glasses"></span>
+			</span>
+			<span>Fokusmodus</span>
+		</button>
+	 
+
+			<details class="popover popover-right" id="article-header-page-actions-overflow">
+				<summary class="justify-content-flex-start button button-clear button-sm button-primary inner-focus" aria-label="Weitere Aktionen" title="Weitere Aktionen">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-more-vertical"></span>
+					</span>
+				</summary>
+				<div class="popover-content">
+					
+		<button data-page-action-item="overflow-mobile" type="button" class="button-block button-sm inner-focus button button-clear display-none-tablet justify-content-flex-start text-align-left" data-bi-name="contents-expand" data-contents-button="" data-popover-close="">
+			<span class="icon">
+				<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+			</span>
+			<span class="contents-expand-title">Inhaltsverzeichnis</span>
+		</button>
+	 
+		<a id="lang-link-overflow" class="button-sm inner-focus button button-clear button-block justify-content-flex-start text-align-left" data-bi-name="language-toggle" data-page-action-item="overflow-all" data-check-hidden="true" data-read-in-link="" href="https://learn.microsoft.com/en-us/azure/iot/iot-introduction" title="Auf Englisch lesen" data-bi="{&quot;cN&quot;:&quot;language-toggle&quot;,&quot;value&quot;:&quot;off&quot;}">
+			<span class="icon" aria-hidden="true" data-read-in-link-icon="">
+				<span class="docon docon-locale-globe"></span>
+			</span>
+			<span data-read-in-link-text="">Auf Englisch lesen</span>
+		</a>
+	 
+		<button type="button" class="collection button button-clear button-sm button-block justify-content-flex-start text-align-left inner-focus" data-list-type="collection" data-bi-name="collection" data-page-action-item="overflow-all" data-check-hidden="true" data-popover-close="" data-pressed="false" title="Einführung in Azure IoT (Internet der Dinge) - Azure IoT | Microsoft Learn zu einer Sammlung hinzufügen">
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="collection-status">Zu Sammlungen hinzufügen</span>
+		</button>
+	
+					
+		<button type="button" class="collection button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus" data-list-type="plan" data-bi-name="plan" data-page-action-item="overflow-all" data-check-hidden="true" data-popover-close="" data-pressed="false" title="Einführung in Azure IoT (Internet der Dinge) - Azure IoT | Microsoft Learn zu einem Plan hinzufügen">
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="plan-status">Zu Plan hinzufügen</span>
+		</button>
+	  
+					
+		<hr class="margin-block-xxs">
+		<h4 class="font-size-sm padding-left-xxs">Freigeben über</h4>
+		
+					<a class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-facebook" data-bi-name="facebook" data-page-action-item="overflow-all" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flearn.microsoft.com%2Fde-de%2Fazure%2Fiot%2Fiot-introduction%3FWT.mc_id%3Dfacebook">
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-facebook-share"></span>
+						</span>
+						<span>Facebook</span>
+					</a>
+
+					<a href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Flearn.microsoft.com%2Fde-de%2Fazure%2Fiot%2Fiot-introduction%3FWT.mc_id%3Dtwitter&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Flearn.microsoft.com%2Fde-de%2Fazure%2Fiot%2Fiot-introduction%3FWT.mc_id%3Dtwitter" class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-twitter" data-bi-name="twitter" data-page-action-item="overflow-all">
+						<span class="icon color-text" aria-hidden="true">
+							<span class="docon docon-xlogo-share"></span>
+						</span>
+						<span>x.com</span>
+					</a>
+
+					<a href="https://www.linkedin.com/feed/?shareActive=true&amp;text=%0A%0D%0Ahttps%3A%2F%2Flearn.microsoft.com%2Fde-de%2Fazure%2Fiot%2Fiot-introduction%3FWT.mc_id%3Dlinkedin" class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-linkedin" data-bi-name="linkedin" data-page-action-item="overflow-all">
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-linked-in-logo"></span>
+						</span>
+						<span>LinkedIn</span>
+					</a>
+					<a href="mailto:?subject=%5BGeteilter%20Artikel%5D%20Einf%C3%BChrung%20in%20Azure%20IoT%20(Internet%20der%20Dinge)%20-%20Azure%20IoT%20%7C%20Microsoft%20Learn&amp;body=%0A%0D%0Ahttps%3A%2F%2Flearn.microsoft.com%2Fde-de%2Fazure%2Fiot%2Fiot-introduction%3FWT.mc_id%3Demail" class="button button-clear button-sm inner-focus button-block justify-content-flex-start text-align-left text-decoration-none share-email" data-bi-name="email" data-page-action-item="overflow-all">
+						<span class="icon color-primary" aria-hidden="true">
+							<span class="docon docon-mail-message"></span>
+						</span>
+						<span>E-Mail</span>
+					</a>
+			  
+	 
+		<hr class="margin-block-xxs">
+		
+				<button class="button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus" type="button" data-bi-name="copy-markdown" data-page-action-item="overflow-all" data-copy-markdown="" data-copy-state="idle" data-check-hidden="true">
+					<span class="icon color-primary" aria-hidden="true">
+						<span data-show-when="idle" class="docon docon-code-lang"></span>
+						<span data-show-when="loading" class="loader" hidden=""></span>
+						<span data-show-when="success" class="docon docon-check-mark" hidden=""></span>
+					</span>
+					<span>Markdown kopieren</span>
+				</button>
+		   
+				<button class="button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus" type="button" data-bi-name="print" data-page-action-item="overflow-all" data-popover-close="" data-print-page="" data-check-hidden="true">
+					<span class="icon color-primary" aria-hidden="true">
+						<span class="docon docon-print"></span>
+					</span>
+					<span>Drucken</span>
+				</button>
+		  
+	
+				</div>
+			</details>
+		</div>
+	
+			</div>
+		</div>
+	  
+		<!-- privateUnauthorizedTemplate is hidden by default -->
+		<div unauthorized-private-section="" data-bi-name="permission-content-unauthorized-private" hidden="">
+			<hr class="hr margin-top-xs margin-bottom-sm">
+			<div class="notification notification-info">
+				<div class="notification-content">
+					<p class="margin-top-none notification-title">
+						<span class="icon">
+							<span class="docon docon-exclamation-circle-solid" aria-hidden="true"></span>
+						</span>
+						<span>Hinweis</span>
+					</p>
+					<p class="margin-top-none authentication-determined not-authenticated">
+						Für den Zugriff auf diese Seite ist eine Autorisierung erforderlich. Sie können versuchen, <a class="docs-sign-in" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#" data-bi-name="permission-content-sign-in">sich anzumelden</a> oder das <a class="docs-change-directory" data-bi-name="permisson-content-change-directory">Verzeichnis zu wechseln</a>.
+					</p>
+					<p class="margin-top-none authentication-determined authenticated">
+						Für den Zugriff auf diese Seite ist eine Autorisierung erforderlich. Sie können versuchen, das <a class="docs-change-directory" data-bi-name="permisson-content-change-directory">Verzeichnis zu wechseln</a>.
+					</p>
+				</div>
+			</div>
+		</div>
+	
+					<div class="content"><h1 id="what-is-azure-internet-of-things-iot">Was ist Azure IoT (Internet der Dinge)?</h1></div>
+					
+		<div id="article-metadata" data-bi-name="article-metadata" data-test-id="article-metadata" class="page-metadata-container display-flex gap-xxs justify-content-space-between align-items-center flex-wrap-wrap">
+			 
+				<div id="user-feedback" class="margin-block-xxs display-none display-none-print" hidden="" data-hide-on-archived="">
+					
+		<button id="user-feedback-button" data-test-id="conceptual-feedback-button" class="button button-sm button-clear button-primary display-none" type="button" data-bi-name="user-feedback-button" data-user-feedback-button="" hidden="">
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-like"></span>
+			</span>
+			<span>Feedback</span>
+		</button>
+	
+				</div>
+		  
+		</div>
+	  
+		<nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm" data-bi-name="intopic toc" aria-label="In diesem Artikel"><!---->
+			<h2 id="ms--in-this-article" class="title is-6 margin-block-xs"><!---->In diesem Artikel<!----></h2>
+			 
+		<ol id="content-well-in-this-article-list" class="border-left padding-left-xxs">
+			<!---->
+					<li class=" ">
+						<a href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#cloud-based-solution" class=""><!---->Cloudbasierte Lösung<!----></a>
+					</li>
+				<!---->
+					<li class=" ">
+						<a href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#edge-based-solution" class=""><!---->Edgebasierte Lösung<!----></a>
+					</li>
+				<!---->
+					<li class=" ">
+						<a href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#devices-and-connectivity" class=""><!---->Geräte und Konnektivität<!----></a>
+					</li>
+				<!---->
+					<li class=" ">
+						<a href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#services-and-applications" class=""><!---->Dienste und Anwendungen<!----></a>
+					</li>
+				<!---->
+					<li class=" expandable">
+						<a href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#solution-wide-concerns" class=""><!---->Lösungsweite Bedenken<!----></a>
+					</li>
+				<!---->
+					<li class=" expandable">
+						<a href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#next-steps" class=""><!---->Nächste Schritte<!----></a>
+					</li>
+				<!---->
+		</ol>
+	 
+		<button type="button" aria-expanded="false" data-show-more="" class="link-button font-weight-semibold font-size-sm margin-top-xxs margin-left-xs" aria-controls="content-well-in-this-article-list" data-title="2 weitere anzeigen" data-bi-name="show-more-btn">
+			<span class="show-more-text "><!---->2 weitere anzeigen<!----></span>
+			
+		</button>
+	 
+		<!----></nav>
+	
+					<div class="content"><p>Das Azure Internet of Things (IoT) ist eine Sammlung von durch Microsoft verwalteten Clouddiensten, Edgekomponenten und SDKs, mit denen Sie Ihre IoT-Geräte in großem Maßstab verbinden, überwachen und steuern können. Vereinfacht ausgedrückt besteht eine IoT-Lösung aus IoT-Geräten, die mit Cloud-Diensten kommunizieren.</p>
+<p>Eine wichtige Entscheidung beim Entwerfen einer IoT-Lösung ist die Frage, ob eine cloudbasierte oder edgebasierte Lösung verwendet werden soll:</p>
+<ul>
+<li>Bei einer cloudbasierten Lösung verbinden sich Ihre IoT-Geräte direkt mit der Cloud, in der ihre Nachrichten verarbeitet und analysiert werden. Sie überwachen und steuern Ihre Geräte direkt aus der Cloud.</li>
+<li>In einer edgebasierten Lösung stellen Ihre IoT-Geräte eine Verbindung mit einer Edgeumgebung her, die ihre Nachrichten verarbeitet, bevor sie zur Speicherung und Analyse an die Cloud weitergeleitet werden. In der Regel überwachen und steuern Sie Ihre Geräte aus der Cloud über die Edge-Laufzeitumgebung. Es ist auch möglich, Ihre Geräte direkt vom Rand aus zu überwachen und zu steuern.</li>
+</ul>
+<p>In den folgenden Abschnitten erhalten Sie eine allgemeine Übersicht über die Komponenten in typischen cloudbasierten und edgebasierten IoT-Lösungen. Dieser Artikel konzentriert sich auf die wichtigsten Komponentengruppen: Geräte, IoT-Clouddienste, Edgelaufzeitumgebung, andere Clouddienste und allgemeine Überlegungen zur Lösung. Weitere Artikel in diesem Abschnitt enthalten ausführlichere Informationen zu den einzelnen Komponenten.</p>
+<div class="heading-wrapper" data-heading-level="h2"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#cloud-based-solution" aria-label="Abschnitt mit dem Titel: Cloudbasierte Lösung"></a><h2 id="cloud-based-solution" class="heading-anchor">Cloudbasierte Lösung</h2></div>
+<p>Eine <strong>cloudbasierte Lösung</strong> ist ein integrierter Satz von IoT-Geräten, -Komponenten und -Diensten, die bestimmte Anforderungen eines Unternehmens erfüllen und Geräte direkt mit der Cloud verbinden. Ein Beispiel für eine cloudbasierte Lösung ist eine Flotte von Lieferwagen, die Sensordaten zur Analyse und Visualisierung an die Cloud senden:</p>
+<!-- Art Library Source# ConceptArt-0-000-025 -->
+<p>
+              <img src="./Einführung in Azure IoT (Internet der Dinge) - Azure IoT _ Microsoft Learn_files/iot-cloud-architecture.svg" alt="Diagramm, das die allgemeine IoT-Lösungsarchitektur für cloudbasierte Lösungen zeigt." data-linktype="relative-path">
+              
+            
+</p>
+<p>Sie können cloudbasierte Lösungen mit Diensten wie <a href="https://learn.microsoft.com/de-de/azure/iot-hub/iot-concepts-and-iot-hub" data-linktype="relative-path">IoT Hub</a>, <a href="https://learn.microsoft.com/de-de/azure/iot-dps/about-iot-dps" data-linktype="relative-path">Gerätebereitstellungsdienst</a> und <a href="https://learn.microsoft.com/de-de/azure/digital-twins/overview" data-linktype="relative-path">Azure Digital Twins</a> erstellen.</p>
+<div class="heading-wrapper" data-heading-level="h2"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#edge-based-solution" aria-label="Abschnitt mit dem Titel: Edgebasierte Lösung"></a><h2 id="edge-based-solution" class="heading-anchor">Edgebasierte Lösung</h2></div>
+<p>Eine <strong>edgebasierte Lösung</strong> ist ein integrierter Satz von IoT-Geräten, -Komponenten und -Diensten, die einen geschäftlichen Bedarf erfüllen und Geräte mit nahe gelegenen Edgediensten verbinden. Ein Beispiel für eine edgebasierte Lösung ist eine Fabrik, in der Ihre industriellen IoT-Geräte eine Verbindung mit lokalen Diensten herstellen, da eine der folgenden:</p>
+<ul>
+<li>Die Geräte kommunizieren mit lokalen Netzwerkprotokollen wie OPC UA.</li>
+<li>Aufgrund von Sicherheitsbedenken dürften die Geräte keine direkte Verbindung mit dem öffentlichen Internet herstellen.</li>
+</ul>
+<p>Eine edgebasierte Lösung kann daten von Ihren Geräten zur weiteren Verarbeitung wie Analyse und Visualisierung weiterhin an die Cloud weiterleiten:</p>
+<!-- Art Library Source# ConceptArt-0-000-025 -->
+<p>
+              <img src="./Einführung in Azure IoT (Internet der Dinge) - Azure IoT _ Microsoft Learn_files/iot-edge-architecture.svg" alt="Diagramm, das die allgemeine IoT-Lösungsarchitektur für edgebasierte Lösungen zeigt." data-linktype="relative-path">
+              
+            
+</p>
+<p>Sie können edgebasierte Lösungen mit <a href="https://learn.microsoft.com/de-de/azure/iot-operations/overview-iot-operations" data-linktype="relative-path">Azure IoT Einsatz</a> oder <a href="https://learn.microsoft.com/de-de/azure/iot-edge/about-iot-edge" data-linktype="relative-path">Azure IoT Edge</a> erstellen. Azure IoT Einsatz ist ein neues Angebot, das dem <a href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#solution-management" data-linktype="self-bookmark">adaptiven Cloudansatz</a> von Microsoft folgt, um Cloud- und Edgekomponenten zu integrieren.</p>
+<div class="heading-wrapper" data-heading-level="h2"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#devices-and-connectivity" aria-label="Abschnitt mit dem Titel: Geräte und Konnektivität"></a><h2 id="devices-and-connectivity" class="heading-anchor">Geräte und Konnektivität</h2></div>
+<p>Sowohl cloudbasierte als auch edgebasierte Lösungen verfügen über <em>Geräte</em>, die Daten sammeln, von denen Sie Geschäftseinblicke ableiten möchten. In den folgenden Abschnitten werden die Geräte in einer IoT-Lösung und ihre Verbindung mit der Cloud beschrieben.</p>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#iot-device-categories" aria-label="Abschnitt mit dem Titel: IoT-Gerätekategorien"></a><h3 id="iot-device-categories" class="heading-anchor">IoT-Gerätekategorien</h3></div>
+<p>Es ist hilfreich, IoT-Geräte wie folgt zu kategorisieren:</p>
+<ul>
+<li><p>
+              <strong>Mit der Cloud verbundenes Gerät (Kategorie 1):</strong>Geräte, die sich direkt mit der Cloud verbinden. Diese Kategorie umfasst Geräte, die eine Verbindung mit Clouddiensten wie <a href="https://learn.microsoft.com/de-de/azure/iot-hub/" data-linktype="relative-path">IoT Hub</a> mit Standardprotokollen wie HTTP, MQTT oder AMQP herstellen. Diese Geräte sind in edgebasierten Lösungen wie Azure IoT Operations nicht relevant.</p>
+</li>
+<li><p>
+              <strong>Edgegebundenes Gerät (Kategorie 2):</strong> Geräte, die über einen edgebasierten Proxy oder Gateway eine Verbindung mit der Cloud herstellen. Beispiele in dieser Kategorie sind Geräte, die:</p>
+<ul>
+<li>Sich indirekt über den MQTT-Broker in Azure IoT Operations mit der Cloud verbinden.</li>
+<li>Indirekt eine Verbindung mit IoT Hub über ein IoT Edge-Gateway herstellen.</li>
+</ul>
+</li>
+<li><p>
+              <strong>Protokollspezifisches Gerät (Kategorie 3):</strong> Diese Geräte stellen über einen Connector eine Verbindung mit einer edgebasierten Laufzeit her, mit der die Geräte ein bestimmtes Protokoll verwenden können. Zum Beispiel verbinden ein OPC UA-Server und seine angeschlossenen Geräte über einen Connector für OPC UA. Diese Geräte sind in cloudbasierten Lösungen wie Azure IoT Hub nicht relevant.</p>
+</li>
+</ul>
+<p>Das folgende Diagramm zeigt die Beziehungen zwischen den Gerätekategorien und den Clouddiensten in einer cloudbasierten Lösung:</p>
+<p>
+              <a href="https://learn.microsoft.com/de-de/azure/iot/media/iot-introduction/cloud-based-devices.svg#lightbox" data-linktype="relative-path" class="lightbox-enabled" data-bi-name="lightbox" aria-haspopup="dialog">
+              <img src="./Einführung in Azure IoT (Internet der Dinge) - Azure IoT _ Microsoft Learn_files/cloud-based-devices.svg" alt="Diagramm, das Geräte in einer cloudbasierten Lösung zeigt." data-linktype="relative-path">
+              
+              </a>
+            
+</p>
+<p>Das folgende Diagramm zeigt die Beziehungen zwischen den Gerätekategorien und der Edgelaufzeit in einer edgebasierten Lösung:</p>
+<p>
+              <a href="https://learn.microsoft.com/de-de/azure/iot/media/iot-introduction/edge-based-devices.svg#lightbox" data-linktype="relative-path" class="lightbox-enabled" data-bi-name="lightbox" aria-haspopup="dialog">
+              <img src="./Einführung in Azure IoT (Internet der Dinge) - Azure IoT _ Microsoft Learn_files/edge-based-devices.svg" alt="Diagramm, das Geräte in einer edgebasierten Lösung zeigt." data-linktype="relative-path">
+              
+              </a>
+            
+</p>
+<!-- mermaid diagrams for device categories
+```mermaid
+graph LR
+    subgraph Physical devices
+        D1[Category 1:<br/>Device connects directly to cloud<br/>HTTP, MQTT, AMQP]
+        D2[Category 2:<br/>Device connects indirectly to the cloud through an edge gateway]
+    end
+    subgraph Cloud services
+        A1[IoT Hub<br>MQTT/AMQP/HTTP]
+    end
+
+    subgraph IoT Edge runtime
+        B1[IoT Edge module -<br>gateway/protocol conversion]
+    end
+
+    D1 -- Direct connection --&gt; A1
+    D2 -- Connects to --&gt; B1
+    B1 -- Forwards data --&gt; A1
+```
+
+```mermaid
+graph LR
+    subgraph Cloud services
+        A1[Such as Event Grid or Event Hubs]
+    end
+
+    subgraph Physical devices
+        D2[Category 2:<br/>Device connects directly to the edge-based MQTT broker]
+        D3[Category 3:<br>Device such as ONVIF compliant camera<br>or server such as OPC UA with attached assets]
+    end
+
+    subgraph IoT Operations edge cluster
+        B2[MQTT broker]
+        B3[Connector such as<br>ONVIF or OPC UA]
+    end
+
+    D2 -- Publish --&gt; B2
+    B2 -. Forwards data (optional) .-> A1
+    B3 -- Publish --&gt; B2
+    D3 -- Communicates using protocols<br>such as ONVIF and OPC UA --&gt; B3
+```
+-->
+<p>Aus Gründen der Einfachheit zeigen die vorherigen Diagramme nur Datenflüsse zur Cloud- oder Edgelaufzeit an. Viele Lösungen ermöglichen Befehls- und Steuerungsszenarien, in denen die Cloud- oder Edgelaufzeit Befehle an die Geräte sendet. Zum Beispiel kann ein Clouddienst einen Befehl an eine ONVIF-kompatible Kamera senden, um zu zoomen.</p>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#iot-devices" aria-label="Abschnitt mit dem Titel: IoT-Geräte"></a><h3 id="iot-devices" class="heading-anchor">IoT-Geräte</h3></div>
+<p>IoT-Geräte in den Kategorien 1 und 2 bestehen in der Regel aus einer Schaltung mit Sensoren, die Daten sammeln. IoT-Geräte der Kategorie 1 stellen eine direkte Verbindung mit dem Internet her, und Geräte der Kategorie 2 verlassen sich auf einem lokalen Gateway für die Konnektivität mit der Cloud. Die folgenden Elemente sind Beispiele für IoT-Geräte der Kategorie 1 und 2:</p>
+<ul>
+<li>Ein Drucksensor einer Ölpumpe an einem entfernten Ort</li>
+<li>Temperatur- und Luftfeuchtigkeitssensoren in einer Klimaanlage</li>
+<li>Ein Beschleunigungsmesser in einem Fahrstuhl</li>
+<li>Präsenzmelder in einem Raum</li>
+</ul>
+<p>Geräte der Kategorie 3 sind physische Geräte in Ihrer Umgebung, die Sie überwachen und steuern möchten. Diese Geräte können:</p>
+<ul>
+<li>Über integrierte Firmware des Herstellers verfügen, die ein Standardprotokoll wie ONVIF implementiert.</li>
+<li>Server mit angefügten Ressourcen sein, die industrielle Protokolle wie OPC UA implementieren.</li>
+</ul>
+<p>Im Folgenden sind Beispiele für Geräte der Kategorie 3 aufgeführt:</p>
+<ul>
+<li>Roboterarme und Förderbänder.</li>
+<li>Industrielle CNC-Maschinen, Drehmaschinen, Sägen und Bohrer</li>
+<li>Medizinische Geräte für bildgebende Diagnoseverfahren</li>
+<li>Sicherheitsvideokameras</li>
+<li>Programmierbare Logikcontroller</li>
+</ul>
+<p>Bei der Erstellung Ihrer Lösung können Sie aus einer Vielzahl von Geräten von verschiedenen Herstellern wählen. Für die Prototyperstellung eines Mikroprozessorgeräts können Sie ein Gerät wie <a href="https://www.raspberrypi.org/" data-linktype="external">Raspberry&nbsp;Pi</a> verwenden. An einen Raspberry Pi können verschiedenste Sensoren angeschlossen werden. Verwenden Sie zur Prototypenerstellung eines Mikrocontrollergeräts Geräte wie das <a href="https://learn.microsoft.com/de-de/azure/iot/tutorial-devkit-espressif-esp32-freertos-iot-hub" data-linktype="relative-path">ESPRESSIF ESP32</a> oder das <a href="https://learn.microsoft.com/de-de/azure/iot/tutorial-devkit-stm-b-l475e-iot-hub" data-linktype="relative-path">STMicroelectronics B-L475E-IOT01A Discovery Kit</a> zur Verbindung mit IoT Hub. Diese Boards verfügen in der Regel über integrierte Sensoren, z.&nbsp;B. Temperatursensor und Beschleunigungsmesser.</p>
+<p>Microsoft stellt Open-Source-basierte <a href="https://learn.microsoft.com/de-de/azure/iot-hub/iot-hub-devguide-sdks" data-linktype="relative-path">Geräte-SDKs</a> bereit, mit denen Sie die Apps erstellen können, die auf Ihren Geräten ausgeführt werden.</p>
+<p>Weitere Informationen zu den Geräten in Ihrer IoT-Lösung finden Sie unter <a href="https://learn.microsoft.com/de-de/azure/iot/iot-overview-device-development" data-linktype="relative-path">IoT-Geräteentwicklung</a>.</p>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#device-connectivity" aria-label="Abschnitt mit dem Titel: Gerätekonnektivität"></a><h3 id="device-connectivity" class="heading-anchor">Gerätekonnektivität</h3></div>
+<p>In der Regel senden IoT-Geräte Daten von ihren angeschlossenen Sensoren an Clouddienste in Ihrer Lösung. Es sind jedoch auch andere Kommunikationstypen möglich, z.&nbsp;B. ein Cloud-Dienst, der Befehle an Ihre Geräte sendet. Nachfolgend finden Sie einige Beispiele für die Kommunikation von Geräten mit der Cloud und von der Cloud mit Geräten:</p>
+<ul>
+<li>Ein Kühllaster sendet alle fünf Minuten Temperaturdaten an eine IoT&nbsp;Hub-Instanz.</li>
+<li>Ein Cloud-Dienst sendet einen Befehl an ein Gerät, um für die Problemdiagnose die Sendefrequenz von Sensordaten zu ändern.</li>
+</ul>
+<p>Die <a href="https://learn.microsoft.com/de-de/azure/iot-hub/iot-hub-devguide-sdks" data-linktype="relative-path">IoT-Geräte-SDKs</a> und IoT&nbsp;Hub unterstützen gängige <a href="https://learn.microsoft.com/de-de/azure/iot-hub/iot-hub-devguide-protocols" data-linktype="relative-path">Kommunikationsprotokolle</a> wie HTTP, MQTT und AMQP für die Kommunikation von Gerät zu Cloud und Cloud zu Gerät. In einigen Szenarien benötigen Sie möglicherweise ein Gateway, um Ihre IoT-Geräte mit Ihren Clouddiensten zu verbinden.</p>
+<p>Die Merkmale von IoT-Geräten unterscheiden sich von anderen Clients wie Browsern und mobilen Apps. Für IoT-Geräte gilt beispielsweise Folgendes:</p>
+<ul>
+<li>Es handelt sich häufig um eingebettete Systeme ohne menschlichen Bediener.</li>
+<li>Sie können an Remotestandorten bereitgestellt werden, an denen der physische Zugriff mit hohen Kosten verbunden ist.</li>
+<li>Möglicherweise kann nur über Ihre Clouddienste erreichbar sein.</li>
+<li>Sie verfügen möglicherweise über eingeschränkte Stromversorgungs- und Verarbeitungsressourcen.</li>
+<li>Sie bieten möglicherweise intermittierende, langsame oder teure Netzwerkkonnektivität.</li>
+<li>Sie müssen möglicherweise geschützte, benutzerdefinierte oder branchenspezifische Anwendungsprotokolle verwenden.</li>
+</ul>
+<p>Die Geräte-SDKs unterstützen Sie beim Bewältigen der Herausforderungen, sichere und zuverlässige Verbindungen zwischen Geräten und Ihrem Cloud-Dienst herzustellen.</p>
+<p>Weitere Informationen zu Gerätekonnektivität und Gateways finden Sie unter <a href="https://learn.microsoft.com/de-de/azure/iot/iot-overview-device-connectivity" data-linktype="relative-path">IoT-Gerätekonnektivität und -infrastruktur</a>.</p>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#connectivity-in-an-edge-based-solution" aria-label="Abschnitt mit dem Titel: Konnektivität in einer edgebasierten Lösung"></a><h3 id="connectivity-in-an-edge-based-solution" class="heading-anchor">Konnektivität in einer edgebasierten Lösung</h3></div>
+<p>In einer edgebasierten Lösung stellen IoT-Geräte eine Verbindung mit einer Edgeumgebung her, die ihre Nachrichten verarbeitet, bevor sie zur Speicherung und Analyse an die Cloud weitergeleitet werden. Geräte können Netzwerkkommunikationsprotokolle und -standards verwenden, z. B.:</p>
+<ul>
+<li>
+              <a href="https://opcfoundation.org/about/opc-technologies/opc-ua/" data-linktype="external">OPC UA</a> in industriellen Umgebungen.</li>
+<li>
+              <a href="https://www.onvif.org/" data-linktype="external">ONVIF</a> zum Verwalten und Überwachen von Videogeräten.</li>
+<li>
+              <a href="https://mqtt.org/" data-linktype="external">MQTT</a> als Standard-Messagingprotokoll für IoT-Geräte.</li>
+</ul>
+<p>Im obigen Diagramm zu edgebasierten Lösungen stellen die <em>Southbound-Connectors</em> die Protokolle und Standards dar, die Geräte für die Verbindung mit der Edgeumgebung verwenden.</p>
+<p>Weitere Informationen zum Verarbeiten von Nachrichten, die von Ihren Geräten gesendet werden, finden Sie unter <a href="https://learn.microsoft.com/de-de/azure/iot/iot-overview-message-processing" data-linktype="relative-path">Nachrichtenverarbeitung in einer IoT-Lösung</a>.</p>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#device-comparisons" aria-label="Abschnitt mit dem Titel: Gerätevergleiche"></a><h3 id="device-comparisons" class="heading-anchor">Gerätevergleiche</h3></div>
+<p>In der folgenden Tabelle sind die aktuellen Optionen für Geräte und Konnektivität zusammengefasst:</p>
+<div class="buttons buttons-right margin-bottom-none margin-top-sm"><!----> <button class="button button-clear button-sm display-flex gap-xxs">
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-expand color-primary"></span>
+		</span>
+		<span><!---->Tabelle erweitern<!----></span>
+	</button><!----></div><div class="inner-focus"><table aria-label="Gerätevergleiche" class="table table-sm margin-top-none">
+<thead>
+<tr>
+<th>Aktuelle Angebote (GA)</th>
+<th>Cloudbasierte Lösung</th>
+<th>Edgebasierte Lösung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verbundene Objekttypen</td>
+<td>IoT-Geräte der Kategorie 1 und 2</td>
+<td>IoT-Geräte der Kategorie 2 und 3</td>
+</tr>
+<tr>
+<td>Protokolle für die Gerätekonnektivität</td>
+<td>HTTP, AMQP, MQTT v3.1.1</td>
+<td>Azure IoT Edge ermöglicht HTTP, AMQP, MQTT v3.1.1 und MQTT v5. <br><br> Azure IoT Operations ermöglicht MQTT v3.1.1 und MQTT v5 für Geräte der Kategorie 2, Connectors ermöglichen andere Protokolle wie OPC UA, ONVIF, SQL und REST für Geräte der Kategorie 3. Benutzerdefinierte Anschlüsse sind möglich.</td>
+</tr>
+<tr>
+<td>Geräte-Implementierung</td>
+<td>Microsoft Azure IoT <a href="https://learn.microsoft.com/de-de/azure/iot/iot-sdks#device-sdks" data-linktype="relative-path">-Geräte-SDKs</a> und <a href="https://learn.microsoft.com/de-de/azure/iot/iot-sdks#embedded-device-sdks" data-linktype="relative-path">eingebettete Geräte-SDKs</a></td>
+<td>Geräte der Kategorie 2 können jede MQTT-Bibliothek verwenden, um eine Verbindung mit dem MQTT-Broker herzustellen. <br><br> Geräte der Kategorie 3 verfügen in der Regel über Standardfirmware.</td>
+</tr>
+<tr>
+<td>Geräteverwaltung</td>
+<td>
+              <a href="https://learn.microsoft.com/de-de/azure/iot-dps/" data-linktype="relative-path">IoT DPS</a>, <a href="https://learn.microsoft.com/de-de/azure/iot-hub-device-update/" data-linktype="relative-path">Geräteupdate</a>, <a href="https://learn.microsoft.com/de-de/azure/iot-central/" data-linktype="relative-path">IoT Central</a>, Azure Device Registry (Vorschau)</td>
+<td>Verwenden Sie in Azure IoT Einsatz die <a href="https://learn.microsoft.com/de-de/azure/iot-operations/discover-manage-assets/overview-manage-assets" data-linktype="relative-path">Azure-Geräteregistrierung</a>. Verwenden Sie Akri, um die automatisierte Geräteermittlung mit systemeigenen Protokollen zu aktivieren. <br><br> Verwenden Sie in IoT Edge <a href="https://learn.microsoft.com/de-de/azure/iot-dps/" data-linktype="relative-path">IoT DPS</a> für die Geräteverwaltung in großem Umfang.</td>
+</tr>
+</tbody>
+</table></div>
+<div class="heading-wrapper" data-heading-level="h2"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#services-and-applications" aria-label="Abschnitt mit dem Titel: Dienste und Anwendungen"></a><h2 id="services-and-applications" class="heading-anchor">Dienste und Anwendungen</h2></div>
+<p>In einer cloudbasierten Lösung bieten IoT-spezifische Clouddienste die Infrastruktur zum Verbinden, Überwachen und Steuern Ihrer Geräte. In einer edgebasierten Lösung hostet die Edgelaufzeitumgebung die Dienste, um Ihre Geräte zu verbinden, zu überwachen und zu steuern. Andere Clouddienste stellen generische Dienste für Ihre Lösung bereit, z.&nbsp;B. Speicher, Analyse und Visualisierung.</p>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#iot-cloud-services" aria-label="Abschnitt mit dem Titel: IoT-Clouddienste"></a><h3 id="iot-cloud-services" class="heading-anchor">IoT-Clouddienste</h3></div>
+<p>In einer cloudbasierten IoT-Lösung ermöglichen Clouddienste in der Regel Folgendes:</p>
+<ul>
+<li>Empfangen Sie Sensordaten von Ihren Geräten in großem Umfang, und bestimmen Sie, wie diese Daten verarbeitet und gespeichert werden sollen.</li>
+<li>Senden Sie Befehle aus der Cloud an ein bestimmtes Gerät.</li>
+<li>Stellen Sie Geräte bereit, und steuern Sie, welche Geräte eine Verbindung mit Ihrer Infrastruktur herstellen können.</li>
+<li>Kontrollieren des Zustands Ihrer Geräte und Überwachung deren Aktivitäten</li>
+<li>Verwalten der auf Ihren Geräten installierten Firmware.</li>
+</ul>
+<p>Beispiel: In einer Remote-Überwachungslösung für eine Ölpumpstation verwenden die Dienste Sensordaten der Pumpen, um anomales Verhalten zu erkennen. Wenn ein Cloud-Dienst eine Anomalie erkennt, kann er automatisch einen Befehl an das Gerät senden, um eine Korrekturmaßnahme durchzuführen. Dieser Prozess implementiert eine automatisierte Feedbackschleife zwischen dem Gerät und der Cloud, mit der die Effizienz der Lösung deutlich gesteigert wird.</p>
+<p>Weitere Informationen zu wichtigen Konzepten zum Verwalten und Steuern von Geräten finden Sie unter <a href="https://learn.microsoft.com/de-de/azure/iot/iot-overview-device-management" data-linktype="relative-path">IoT-Geräteverwaltung und -steuerung</a>.</p>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#edge-runtime" aria-label="Abschnitt mit dem Titel: Edge-Laufzeit"></a><h3 id="edge-runtime" class="heading-anchor">Edge-Laufzeit</h3></div>
+<p>In einer edgebasierten IoT-Lösung führen die lokalen Dienste, die in der Edgelaufzeitumgebung gehostet werden, in der Regel Folgendes aus:</p>
+<ul>
+<li>Verwalten der Konnektivität mit Ihren Geräten über die Southbound-Connectors</li>
+<li>Empfangen von Daten im Maßstab von Ihren Geräten und bestimmen, wo die Nachrichten zur weiteren Verarbeitung weitergeleitet werden sollen.</li>
+<li>Leiten Sie Befehle aus der Cloud an bestimmte Geräte weiter.</li>
+<li>Ausführen bestimmter lokaler Nachrichtenverarbeitung In Azure IoT Einsatz erfolgt diese Verarbeitung in den Northbound-Connectors.</li>
+</ul>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#other-cloud-services" aria-label="Abschnitt mit dem Titel: Andere Clouddienste"></a><h3 id="other-cloud-services" class="heading-anchor">Andere Clouddienste</h3></div>
+<p>Sowohl cloudbasierte als auch edgebasierte Lösungen können andere Clouddienste verwenden, um in Ihrer Lösung mehr Funktionen bereitzustellen. Verwenden Sie zum Beispiel:</p>
+<ul>
+<li>Azure-Speicherdienste zum Speichern gesammelter Daten.</li>
+<li>Azure Stream Analytics zum Verarbeiten von Sensordaten in Echtzeit.</li>
+<li>Azure Functions, um auf Geräteereignisse zu reagieren.</li>
+<li>Azure Logic Apps, um Geschäftsprozesse zu automatisieren.</li>
+<li>Azure Machine Learning, um maschinelles Lernen und KI-Modelle zu Ihrer Lösung hinzuzufügen.</li>
+<li>Microsoft Fabric zum Speichern und Analysieren von Sensordaten.</li>
+<li>Microsoft Power BI zum Visualisieren von Sensordaten.</li>
+</ul>
+<p>Weitere Informationen finden Sie unter:</p>
+<ul>
+<li>
+              <a href="https://learn.microsoft.com/de-de/azure/iot/iot-overview-solution-extensibility" data-linktype="relative-path">Erweitern Ihrer IoT-Lösung</a></li>
+<li>
+              <a href="https://learn.microsoft.com/de-de/azure/iot/iot-overview-analyze-visualize" data-linktype="relative-path">Analysieren und Visualisieren Ihrer IoT-Daten</a></li>
+</ul>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#iot-services-comparisons" aria-label="Abschnitt mit dem Titel: Vergleich von IoT-Diensten"></a><h3 id="iot-services-comparisons" class="heading-anchor">Vergleich von IoT-Diensten</h3></div>
+<p>In der folgenden Tabelle sind die aktuellen Dienst- und Edgeanwendungsoptionen zusammengefasst:</p>
+<div class="buttons buttons-right margin-bottom-none margin-top-sm"><!----> <button class="button button-clear button-sm display-flex gap-xxs">
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-expand color-primary"></span>
+		</span>
+		<span><!---->Tabelle erweitern<!----></span>
+	</button><!----></div><div class="inner-focus"><table aria-label="Vergleich von IoT-Diensten" class="table table-sm margin-top-none">
+<thead>
+<tr>
+<th>Aktuelle Angebote (GA)</th>
+<th>Cloudbasierte Lösung</th>
+<th>Edgebasierte Lösung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dienste</td>
+<td>
+              <a href="https://learn.microsoft.com/de-de/azure/iot-hub/" data-linktype="relative-path">IoT Hub</a>, <a href="https://learn.microsoft.com/de-de/azure/iot-dps/" data-linktype="relative-path">IoT DPS</a>, <a href="https://learn.microsoft.com/de-de/azure/iot-hub-device-update/" data-linktype="relative-path">IoT Hub Device Update</a>, <a href="https://learn.microsoft.com/de-de/azure/digital-twins/" data-linktype="relative-path">Azure Digital Twins</a>, Azure Device Registry (Vorschau)</td>
+<td>
+              <a href="https://learn.microsoft.com/de-de/azure/iot-operations/overview-iot-operations" data-linktype="relative-path">Azure IoT Einsatz</a>, mit der <a href="https://learn.microsoft.com/de-de/azure/iot-operations/discover-manage-assets/overview-manage-assets" data-linktype="relative-path">Azure-Geräteregistrierung</a>. <br><br> Sie können auch <a href="https://learn.microsoft.com/de-de/azure/iot-edge/" data-linktype="relative-path">IoT Edge</a> verwenden.</td>
+</tr>
+<tr>
+<td>Optionen für Edgeanwendungen</td>
+<td>Keine</td>
+<td>Mit <a href="https://learn.microsoft.com/de-de/azure/iot-operations/overview-iot-operations" data-linktype="relative-path">Azure IoT Operations</a> können Sie <a href="https://learn.microsoft.com/de-de/azure/iot-operations/create-edge-apps/howto-deploy-dapr" data-linktype="relative-path">DAPR</a> (verteilte Anwendungslaufzeit-Apps) verwenden. <br><br> Mit <a href="https://learn.microsoft.com/de-de/azure/iot-edge/" data-linktype="relative-path">IoT Edge</a> können Sie IoT Edge-Module verwenden.</td>
+</tr>
+</tbody>
+</table></div>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#deployment-comparisons" aria-label="Abschnitt mit dem Titel: Bereitstellungsvergleiche"></a><h3 id="deployment-comparisons" class="heading-anchor">Bereitstellungsvergleiche</h3></div>
+<p>In der folgenden Tabelle sind die aktuellen Bereitstellungsoptionen zusammengefasst:</p>
+<div class="buttons buttons-right margin-bottom-none margin-top-sm"><!----> <button class="button button-clear button-sm display-flex gap-xxs">
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-expand color-primary"></span>
+		</span>
+		<span><!---->Tabelle erweitern<!----></span>
+	</button><!----></div><div class="inner-focus"><table aria-label="Bereitstellungsvergleiche" class="table table-sm margin-top-none">
+<thead>
+<tr>
+<th>Aktuelle Angebote (GA)</th>
+<th>Cloudbasierte Lösung</th>
+<th>Edgebasierte Lösung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Topologie</td>
+<td>Geräte stellen eine direkte Verbindung mit Cloudmessagingdiensten wie <a href="https://learn.microsoft.com/de-de/azure/iot-hub/" data-linktype="relative-path">IoT Hub</a> her. Verwaltet in der Cloud mit Azure Resource Manager (ARM) oder <a href="https://learn.microsoft.com/de-de/azure/iot/iot-sdks#iot-hub-service-sdks" data-linktype="relative-path">IoT Hub-Dienst-SDKs</a>.</td>
+<td>
+              <a href="https://learn.microsoft.com/de-de/azure/iot-operations/overview-iot-operations" data-linktype="relative-path">Azure IoT Operations</a> bietet eine Möglichkeit, um Geräte mit einem lokalen Kubernetes-Cluster zu verbinden. Geräte stellen eine Verbindung mit dem Azure IoT Einsatz-MQTT-Broker her, entweder direkt über Standardnetzwerkprotokolle oder über Zwischengeräte. Wird in der Cloud mit Azure Arc-fähigen Diensten verwaltet. <br><br> Sie können auch <a href="https://learn.microsoft.com/de-de/azure/iot-edge/" data-linktype="relative-path">IoT Edge</a> verwenden. IoT Edge ist eine geräteorientierte Laufzeitumgebung, mit der Sie containerisierte Linux-Workloads am Edge bereitstellen, ausführen und überwachen können, um schnellere Erkenntnisse zu gewinnen und Entscheidungen offline treffen zu können. IoT Edge ist ein Feature von <a href="https://learn.microsoft.com/de-de/azure/iot-hub/" data-linktype="relative-path">IoT Hub</a>.</td>
+</tr>
+<tr>
+<td>Infrastruktur</td>
+<td>Clouddienste wie <a href="https://learn.microsoft.com/de-de/azure/iot-hub/" data-linktype="relative-path">IoT Hub</a> und Standardcomputinggeräte, die eine CPU/MPU enthalten, oder eingeschränkte und eingebettete Geräte, die eine MCU enthalten.</td>
+<td>
+              <a href="https://learn.microsoft.com/de-de/azure/iot-operations/overview-iot-operations" data-linktype="relative-path">Azure IoT Operations</a>, die auf einem Kubernetes-Cluster ausgeführt wird, und Geräte, die eine Verbindung mit dem Cluster herstellen. <br><br> Sie können auch <a href="https://learn.microsoft.com/de-de/azure/iot-edge/" data-linktype="relative-path">IoT Edge</a> verwenden, das auf einem Gatewaygerät wie einem Raspberry Pi oder einem Industrie-PC ausgeführt wird, und Geräte, die mit dem Gatewaygerät verbunden sind.<br><br> Geräte, die eine Verbindung mit Azure IoT Operations oder IoT Edge herstellen, können Standardcomputer enthalten, die eine CPU/MPU enthalten, oder eingeschränkte und eingebettete Geräte, die eine MCU enthalten.</td>
+</tr>
+</tbody>
+</table></div>
+<div class="heading-wrapper" data-heading-level="h2"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#solution-wide-concerns" aria-label="Abschnitt mit dem Titel: Lösungsweite Bedenken"></a><h2 id="solution-wide-concerns" class="heading-anchor">Lösungsweite Bedenken</h2></div>
+<p>Jede IoT-Lösung muss auf die folgenden lösungsweiten Bedenken angehen:</p>
+<ul>
+<li>
+              <a href="https://learn.microsoft.com/de-de/azure/iot/iot-overview-solution-management" data-linktype="relative-path">Lösungsverwaltung</a>, einschließlich Bereitstellung und Überwachung.</li>
+<li>
+              <a href="https://learn.microsoft.com/de-de/azure/iot/iot-overview-security" data-linktype="relative-path">Sicherheit</a>, einschließlich physischer Sicherheit, Authentifizierung, Autorisierung und Verschlüsselung.</li>
+<li>
+              <a href="https://learn.microsoft.com/de-de/azure/iot/iot-overview-scalability-high-availability" data-linktype="relative-path">Skalierbarkeit, Hochverfügbarkeit und Notfallwiederherstellung</a> für alle Komponenten in Ihrer Lösung.</li>
+</ul>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#solution-management" aria-label="Abschnitt mit dem Titel: Lösungsverwaltung"></a><h3 id="solution-management" class="heading-anchor">Lösungsverwaltung</h3></div>
+<p>Der <a href="https://azure.microsoft.com/solutions/adaptive-cloud" data-linktype="external">adaptive Cloud-Ansatz</a> vereint Siloteams, verteilte Standorte und unterschiedliche Systeme in einem einzigen Betriebs-, Sicherheits-, Anwendungs- und Datenmodell. Mit diesem Ansatz können Sie dieselben Cloud- und KI-Technologien verwenden, um edgebasierte, cloudbasierte und hybride IoT-Lösungen zu verwalten und zu überwachen.</p>
+<p>Lösungen, die auf IoT Hub, IoT Central und IoT Edge basieren, bieten eingeschränkte Unterstützung für einen adaptiven Cloudansatz. Obwohl IoT Hub-, IoT Central- und IoT Edge-Instanzen selbst Azure-Ressourcen sind, stellen nicht nativ Funktionen, z.&nbsp;B. Geräteverwaltung und Datentransformation, als Ressourcen bereit, die Sie als Standard-Azure-Ressourcen verwalten können.</p>
+<p>Im Gegensatz dazu bieten Lösungen, die auf Azure IoT Einsatz basieren, eine einheitliche Verwaltungsoberfläche für alle Komponenten in Ihrer Lösung. Azure IoT Einsatz verwendet Azure Arc-fähige Dienste, um Ihre edgebasierte Lösung so zu verwalten und zu überwachen, als wäre sie eine cloudbasierte Lösung. Beispielsweise werden Geräte und Datentransformationen, die auf dem Edge ausgeführt werden, als Cloudressourcen in Azure verfügbar gemacht. Mit diesem Ansatz können Sie standardmäßige Azure-Technologien verwenden, um Ihre gesamte edgebasierte Lösung zu verwalten und zu überwachen.</p>
+<div class="heading-wrapper" data-heading-level="h3"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#security-comparisons" aria-label="Abschnitt mit dem Titel: Sicherheitsvergleiche"></a><h3 id="security-comparisons" class="heading-anchor">Sicherheitsvergleiche</h3></div>
+<p>In der folgenden Tabelle sind die aktuellen Sicherheitsoptionen zusammengefasst:</p>
+<div class="buttons buttons-right margin-bottom-none margin-top-sm"><!----> <button class="button button-clear button-sm display-flex gap-xxs">
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-expand color-primary"></span>
+		</span>
+		<span><!---->Tabelle erweitern<!----></span>
+	</button><!----></div><div class="inner-focus"><table aria-label="Sicherheitsvergleiche" class="table table-sm margin-top-none">
+<thead>
+<tr>
+<th>Aktuelle Angebote (GA)</th>
+<th>Cloudbasierte Lösung</th>
+<th>Edgebasierte Lösung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authentifizierung</td>
+<td>Shared Access Signatures (SAS). X.509</td>
+<td>
+              <a href="https://learn.microsoft.com/de-de/azure/iot-operations/overview-iot-operations" data-linktype="relative-path">Azure IoT Operations</a> verwendet <a href="https://learn.microsoft.com/de-de/entra/identity/managed-identities-azure-resources/overview" data-linktype="absolute-path">vom Benutzer zugewiesene und vom System zugewiesene verwaltete Identitäten</a>, Dienstkontotoken (SAT), SAS und X.509 für die On-Cluster-Authentifizierung. <br><br> 
+              <a href="https://learn.microsoft.com/de-de/azure/iot-edge/" data-linktype="relative-path">IoT Edge</a> verwendet <a href="https://learn.microsoft.com/de-de/azure/iot-edge/iot-edge-certs" data-linktype="relative-path">zertifikatbasierte Authentifizierung</a>.</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>Proprietäres Angebot in aktuellen Serviceangeboten wie <a href="https://learn.microsoft.com/de-de/azure/iot-hub/" data-linktype="relative-path">IoT Hub</a></td>
+<td>
+              <a href="https://learn.microsoft.com/de-de/azure/iot-operations/overview-iot-operations" data-linktype="relative-path">Azure IoT Einsatz </a> verwendet <a href="https://learn.microsoft.com/de-de/entra/fundamentals/whatis" data-linktype="absolute-path">Microsoft Entra ID</a>--Identität für die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC). <br><br> 
+              <a href="https://learn.microsoft.com/de-de/azure/iot-edge/" data-linktype="relative-path">IoT Edge</a> verwendet ein proprietäres Autorisierungsschema, das mit <a href="https://learn.microsoft.com/de-de/azure/iot-hub/" data-linktype="relative-path">IoT Hub</a> kommuniziert, aber die Autorisierung lokal verarbeitet.</td>
+</tr>
+</tbody>
+</table></div>
+<div class="heading-wrapper" data-heading-level="h2"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#next-steps" aria-label="Abschnitt mit dem Titel: Nächste Schritte"></a><h2 id="next-steps" class="heading-anchor">Nächste Schritte</h2></div>
+<p>Zu den empfohlenen nächsten Schritten zum Erkunden von Azure&nbsp;IoT gehören:</p>
+<ul>
+<li>
+              <a href="https://learn.microsoft.com/de-de/azure/iot/iot-overview-device-development" data-linktype="relative-path">IoT-Geräteentwicklung</a></li>
+<li>
+              <a href="https://learn.microsoft.com/de-de/azure/iot/iot-overview-message-processing" data-linktype="relative-path">Nachrichtenverarbeitung in einer IoT-Lösung</a></li>
+<li>
+              <a href="https://learn.microsoft.com/de-de/azure/iot/iot-overview-solution-management" data-linktype="relative-path">Verwalten Ihrer IoT-Lösung</a></li>
+<li>
+              <a href="https://learn.microsoft.com/de-de/azure/iot/iot-services-and-technologies" data-linktype="relative-path">Auswählen eines Azure IoT-Diensts</a></li>
+</ul>
+<p>Weitere Informationen zu Azure IoT-Architekturen finden Sie unter:</p>
+<ul>
+<li>
+              <a href="https://learn.microsoft.com/de-de/azure/well-architected/service-guides/azure-iot-hub" data-linktype="absolute-path">Bewährte Methoden für die Architektur für Azure IoT Hub</a></li>
+<li>
+              <a href="https://learn.microsoft.com/de-de/azure/architecture/browse/?terms=iot" data-linktype="absolute-path">IoT-Architekturen im Azure Architecture Center</a></li>
+</ul>
+</div>
+					
+		<div id="ms--inline-notifications" class="margin-block-xs" data-bi-name="inline-notification"></div>
+	 
+		<div id="assertive-live-region" role="alert" aria-live="assertive" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+		<div id="polite-live-region" role="status" aria-live="polite" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+	
+					
+		<!-- feedback section -->
+		<section id="site-user-feedback-footer" class="font-size-sm margin-top-md display-none-print display-none-desktop" data-test-id="site-user-feedback-footer" data-bi-name="site-feedback-section">
+			<hr class="hr">
+			<h2 id="ms--feedback" class="title is-3">Feedback</h2>
+			<div class="display-flex flex-wrap-wrap align-items-center">
+				<p class="font-weight-semibold margin-xxs margin-left-none">
+					War diese Seite hilfreich?
+				</p>
+				<div class="buttons">
+					<button class="thumb-rating-button like button button-primary button-sm" data-test-id="footer-rating-yes" data-binary-rating-response="rating-yes" type="button" title="Dieser Artikel ist hilfreich." data-bi-name="button-rating-yes" aria-pressed="false">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-like"></span>
+						</span>
+						<span>Yes</span>
+					</button>
+					<button class="thumb-rating-button dislike button button-primary button-sm" id="standard-rating-no-button" data-test-id="footer-rating-no" data-binary-rating-response="rating-no" type="button" title="Dieser Artikel ist nicht hilfreich." data-bi-name="button-rating-no" aria-pressed="false">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-dislike"></span>
+						</span>
+						<span>No</span>
+					</button>
+					<details class="popover popover-top" id="mobile-help-popover" data-test-id="footer-feedback-popover" hidden="">
+						<summary class="thumb-rating-button dislike button button-primary button-sm" data-test-id="details-footer-rating-no" data-binary-rating-response="rating-no" title="Dieser Artikel ist nicht hilfreich." data-bi-name="button-rating-no" aria-pressed="false" data-bi-an="feedback-unhelpful-popover">
+							<span class="icon" aria-hidden="true">
+								<span class="docon docon-dislike"></span>
+							</span>
+							<span>No</span>
+						</summary>
+						<div class="popover-content width-200 width-300-tablet" role="dialog" aria-labelledby="popover-heading" aria-describedby="popover-description">
+							<p id="popover-heading" class="font-size-lg margin-bottom-xxs font-weight-semibold">
+								Benötigen Sie Hilfe zu diesem Thema?
+							</p>
+							<p id="popover-description" class="font-size-sm margin-bottom-xs">
+								Möchten Sie versuchen, Ask Learn zu verwenden, um Sie durch dieses Thema zu klären oder zu leiten?
+							</p>
+							
+		<div class="buttons flex-direction-row flex-wrap justify-content-center gap-xxs">
+			<div>
+		<button class="button button-sm border inner-focus display-none margin-right-xxs" data-bi-name="ask-learn-assistant-entry-troubleshoot" data-test-id="ask-learn-assistant-modal-entry-mobile-feedback" data-ask-learn-modal-entry-feedback="" data-bi-an="feedback-unhelpful-popover" type="button" style="min-width: max-content;" aria-expanded="false" aria-label="Learn fragen" hidden="">
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button class="button button-sm display-inline-flex display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn margin-right-xxs" data-bi-name="ask-learn-assistant-entry-troubleshoot" data-bi-an="feedback-unhelpful-popover" data-test-id="ask-learn-assistant-modal-entry-tablet-feedback" data-ask-learn-modal-entry-feedback="" type="button" style="min-width: max-content;" aria-expanded="false" hidden="">
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Learn fragen</span>
+		</button>
+		<button class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn margin-right-xxs" data-bi-name="ask-learn-assistant-entry-troubleshoot" data-bi-an="feedback-unhelpful-popover" data-test-id="ask-learn-assistant-flyout-entry-feedback" data-ask-learn-flyout-entry-show-only="" data-flyout-button="toggle" type="button" style="min-width: max-content;" aria-expanded="false" aria-controls="ask-learn-flyout" hidden="">
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Learn fragen</span>
+		</button>
+	</div>
+			<button type="button" class="button button-sm margin-right-xxs" data-help-option="suggest-fix" data-bi-name="feedback-suggest" data-bi-an="feedback-unhelpful-popover" data-test-id="suggest-fix">
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-feedback"></span>
+				</span>
+				<span> Lösung vorschlagen? </span>
+			</button>
+		</div>
+	
+						</div>
+					</details>
+				</div>
+			</div>
+		</section>
+		<!-- end feedback section -->
+	
+				</div>
+				
+		<div id="ms--additional-resources-mobile" class="display-none-print">
+			<hr class="hr" hidden="">
+			<h2 id="ms--additional-resources-mobile-heading" class="title is-3" hidden="">
+				Zusätzliche Ressourcen
+			</h2>
+			
+		<section id="right-rail-recommendations-mobile" class="" data-bi-name="recommendations" hidden=""></section>
+	 
+		<section id="right-rail-training-mobile" class="" data-bi-name="learning-resource-card" hidden=""></section>
+	 
+		<section id="right-rail-events-mobile" class="" data-bi-name="events-card" hidden=""></section>
+	 
+		<section id="right-rail-qna-mobile" class="margin-top-xxs" data-bi-name="qna-link-card" hidden=""></section>
+	
+		</div>
+	 
+		<div id="article-metadata-footer" data-bi-name="article-metadata-footer" data-test-id="article-metadata-footer" class="page-metadata-container">
+			<hr class="hr">
+			<ul class="metadata page-metadata" data-bi-name="page info" lang="de-de" dir="ltr">
+				<li class="visibility-hidden-visual-diff">
+			<span class="badge badge-sm text-wrap-pretty">
+				<span>Last updated on <local-time format="twoDigitNumeric" datetime="2025-10-07T18:38:00.000Z" data-article-date-source="calculated" class="">07.10.2025</local-time></span>
+			</span>
+		</li>
+			</ul>
+		</div>
+	
+			</div>
+			
+		<div id="action-panel" role="region" aria-label="Aktionsbereich" class="action-panel" tabindex="-1"></div>
+	
+		
+				</main>
+				<aside id="layout-body-aside" class="layout-body-aside " data-bi-name="aside" aria-label="Zusätzliche Ressourcen">
+					
+		<div id="ms--additional-resources" class="right-container padding-sm display-none display-block-desktop height-full" data-bi-name="pageactions">
+			<div id="affixed-right-container" data-bi-name="right-column" class="position-sticky" style="top: 24px; max-height: 12781.9px; height: calc(-102px + 100vh);">
+				
+		<nav id="side-doc-outline" class="doc-outline border-bottom padding-bottom-xs margin-bottom-xs" data-bi-name="intopic toc" aria-label="In diesem Artikel" style="overflow: auto; max-height: calc(100% + 0px);"><!---->
+			<h2 class="title is-6 margin-top-xxs margin-bottom-xs">
+				In diesem Artikel
+			</h2>
+			
+		<ol id="right-rail-in-this-article-list" class="padding-right-xxs">
+			<!---->
+					<li class="border-left-md border-color-transparent padding-left-xxs ">
+						<a href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#cloud-based-solution" class="color-text-subtle"><!---->Cloudbasierte Lösung<!----></a>
+					</li>
+				<!---->
+					<li class="border-left-md border-color-transparent padding-left-xxs ">
+						<a href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#edge-based-solution" class="color-text-subtle"><!---->Edgebasierte Lösung<!----></a>
+					</li>
+				<!---->
+					<li class="border-left-md border-color-transparent padding-left-xxs ">
+						<a href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#devices-and-connectivity" class="color-text-subtle"><!---->Geräte und Konnektivität<!----></a>
+					</li>
+				<!---->
+					<li class="border-left-md border-color-transparent padding-left-xxs ">
+						<a href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#services-and-applications" class="color-text-subtle"><!---->Dienste und Anwendungen<!----></a>
+					</li>
+				<!---->
+					<li class="border-left-md border-color-transparent padding-left-xxs ">
+						<a href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#solution-wide-concerns" class="color-text-subtle"><!---->Lösungsweite Bedenken<!----></a>
+					</li>
+				<!---->
+					<li class="border-left-md border-color-transparent padding-left-xxs ">
+						<a href="https://learn.microsoft.com/de-de/azure/iot/iot-introduction#next-steps" class="color-text-subtle"><!---->Nächste Schritte<!----></a>
+					</li>
+				<!---->
+		</ol>
+	
+		<!----></nav>
+	
+				<!-- Feedback -->
+				
+		<section id="ms--site-user-feedback-right-rail" class="font-size-sm display-none-print" data-test-id="site-user-feedback-right-rail" data-bi-name="site-feedback-right-rail">
+			<p class="font-weight-semibold margin-bottom-xs">War diese Seite hilfreich?</p>
+			<div class="buttons">
+				<button class="thumb-rating-button like button button-primary button-sm" data-test-id="right-rail-rating-yes" data-binary-rating-response="rating-yes" type="button" title="Dieser Artikel ist hilfreich." data-bi-name="button-rating-yes" aria-pressed="false">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-like"></span>
+					</span>
+					<span>Yes</span>
+				</button>
+				<button class="thumb-rating-button dislike button button-primary button-sm" id="right-rail-no-button" data-test-id="right-rail-rating-no" data-binary-rating-response="rating-no" type="button" title="Dieser Artikel ist nicht hilfreich." data-bi-name="button-rating-no" aria-pressed="false">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-dislike"></span>
+					</span>
+					<span>No</span>
+				</button>
+				<details class="popover popover-right" id="help-popover" data-test-id="feedback-popover" hidden="">
+					<summary tabindex="0" class="thumb-rating-button dislike button button-primary button-sm" data-test-id="details-right-rail-rating-no" data-binary-rating-response="rating-no" title="Dieser Artikel ist nicht hilfreich." data-bi-name="button-rating-no" aria-pressed="false" data-bi-an="feedback-unhelpful-popover">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-dislike"></span>
+						</span>
+						<span>No</span>
+					</summary>
+					<div class="popover-content width-200 width-300-tablet" role="dialog" aria-labelledby="popover-heading" aria-describedby="popover-description">
+						<p id="popover-heading-right-rail" class="font-size-lg margin-bottom-xxs font-weight-semibold">
+							Benötigen Sie Hilfe zu diesem Thema?
+						</p>
+						<p id="popover-description-right-rail" class="font-size-sm margin-bottom-xs">
+							Möchten Sie versuchen, Ask Learn zu verwenden, um Sie durch dieses Thema zu klären oder zu leiten?
+						</p>
+						
+		<div class="buttons flex-direction-row flex-wrap justify-content-center gap-xxs">
+			<div>
+		<button class="button button-sm border inner-focus display-none margin-right-xxs" data-bi-name="ask-learn-assistant-entry-troubleshoot" data-test-id="ask-learn-assistant-modal-entry-mobile-feedback" data-ask-learn-modal-entry-feedback="" data-bi-an="feedback-unhelpful-popover" type="button" style="min-width: max-content;" aria-expanded="false" aria-label="Learn fragen" hidden="">
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button class="button button-sm display-inline-flex display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn margin-right-xxs" data-bi-name="ask-learn-assistant-entry-troubleshoot" data-bi-an="feedback-unhelpful-popover" data-test-id="ask-learn-assistant-modal-entry-tablet-feedback" data-ask-learn-modal-entry-feedback="" type="button" style="min-width: max-content;" aria-expanded="false" hidden="">
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Learn fragen</span>
+		</button>
+		<button class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn margin-right-xxs" data-bi-name="ask-learn-assistant-entry-troubleshoot" data-bi-an="feedback-unhelpful-popover" data-test-id="ask-learn-assistant-flyout-entry-feedback" data-ask-learn-flyout-entry-show-only="" data-flyout-button="toggle" type="button" style="min-width: max-content;" aria-expanded="false" aria-controls="ask-learn-flyout" hidden="">
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Learn fragen</span>
+		</button>
+	</div>
+			<button type="button" class="button button-sm margin-right-xxs" data-help-option="suggest-fix" data-bi-name="feedback-suggest" data-bi-an="feedback-unhelpful-popover" data-test-id="suggest-fix">
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-feedback"></span>
+				</span>
+				<span> Lösung vorschlagen? </span>
+			</button>
+		</div>
+	
+					</div>
+				</details>
+			</div>
+		</section>
+	
+			</div>
+		</div>
+	
+			  </aside> <section id="layout-body-flyout" class="layout-body-flyout " data-bi-name="flyout">
+					 <div class="height-full border-left background-color-body-medium" id="ask-learn-flyout"></div>
+			  </section> <div class="layout-body-footer " data-bi-name="layout-footer">
+		<footer id="footer" data-test-id="footer" data-bi-name="footer" class="footer-layout has-padding has-default-focus border-top  uhf-container" role="contentinfo">
+			<div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop">
+				
+		<a data-mscc-ic="false" href="https://learn.microsoft.com/de-de/locale?target=https%3A%2F%2Flearn.microsoft.com%2Fde-de%2Fazure%2Fiot%2Fiot-introduction" data-bi-name="select-locale" class="locale-selector-link flex-shrink-0 button button-sm button-clear external-link-indicator" id="" title="" aria-label="Sprachauswahl für Inhalte Derzeit festgelegt: Deutsch"><span class="icon" aria-hidden="true"><span class="docon docon-world"></span></span><span class="local-selector-link-text">Deutsch</span></a>
+	 <div class="ccpa-privacy-link" data-ccpa-privacy-link="">
+		
+		<a data-mscc-ic="false" href="https://aka.ms/yourcaliforniaprivacychoices" data-bi-name="your-privacy-choices" class="button button-sm button-clear flex-shrink-0 external-link-indicator" id="" title="">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 14" xml:space="preserve" height="16" width="43" aria-hidden="true" focusable="false">
+			<path d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"></path>
+			<path d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"></path>
+			<path d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z" style="fill:#fff"></path>
+			<path d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z" style="fill:#06f"></path>
+		</svg>
+	
+			<span>Ihre Datenschutzoptionen</span></a>
+	
+	</div>
+				<div class="flex-shrink-0">
+		<div class="dropdown has-caret-up">
+			<button data-test-id="theme-selector-button" class="dropdown-trigger button button-clear button-sm inner-focus theme-dropdown-trigger" aria-controls="{{ themeMenuId }}" aria-expanded="false" title="Design" data-bi-name="theme">
+				<span class="icon">
+					<span class="docon docon-sun" aria-hidden="true"></span>
+				</span>
+				<span>Design</span>
+				<span class="icon expanded-indicator" aria-hidden="true">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<div class="dropdown-menu" id="{{ themeMenuId }}" role="menu">
+				<ul class="theme-selector padding-xxs" data-test-id="theme-dropdown-menu">
+					<li class="theme display-block">
+						<button class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left is-selected" data-theme-to="light" aria-pressed="true">
+							<span class="theme-light margin-right-xxs">
+								<span class="theme-selector-icon border display-inline-block has-body-background" aria-hidden="true">
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background"></rect>
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> Hell </span>
+						</button>
+					</li>
+					<li class="theme display-block">
+						<button class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left" data-theme-to="dark" aria-pressed="false">
+							<span class="theme-dark margin-right-xxs">
+								<span class="border theme-selector-icon display-inline-block has-body-background" aria-hidden="true">
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background"></rect>
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> Dunkel </span>
+						</button>
+					</li>
+					<li class="theme display-block">
+						<button class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left" data-theme-to="high-contrast" aria-pressed="false">
+							<span class="theme-high-contrast margin-right-xxs">
+								<span class="border theme-selector-icon display-inline-block has-body-background" aria-hidden="true">
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background"></rect>
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+									</svg>
+								</span>
+							</span>
+							<span role="menuitem"> Hoher Kontrast </span>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+			</div>
+			<ul class="links" data-bi-name="footerlinks">
+				<li class="manage-cookies-holder"><button data-bi-name="manageCookies">Cookies verwalten</button></li>
+				<li>
+		
+		<a data-mscc-ic="false" href="https://learn.microsoft.com/de-de/principles-for-ai-generated-content" data-bi-name="aiDisclaimer" class=" external-link-indicator" id="" title="">KI-Haftungsausschluss</a>
+	
+	</li><li>
+		
+		<a data-mscc-ic="false" href="https://learn.microsoft.com/de-de/previous-versions/" data-bi-name="archivelink" class=" external-link-indicator" id="" title="">Frühere Versionen</a>
+	
+	</li> <li>
+		
+		<a data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink" class=" external-link-indicator" id="" title="">Blog</a>
+	
+	</li> <li>
+		
+		<a data-mscc-ic="false" href="https://learn.microsoft.com/de-de/contribute" data-bi-name="contributorGuide" class=" external-link-indicator" id="" title="">Mitwirken</a>
+	
+	</li><li>
+		
+		<a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy" class=" external-link-indicator" id="" title="">Datenschutz</a>
+	
+	</li><li>
+		
+		<a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?linkid=2259814" data-bi-name="consumer-health-privacy" class=" external-link-indicator" id="" title="">Consumer Health Privacy</a>
+	
+	</li><li>
+		
+		<a data-mscc-ic="false" href="https://learn.microsoft.com/de-de/legal/termsofuse" data-bi-name="termsofuse" class=" external-link-indicator" id="" title="">Nutzungsbedingungen</a>
+	
+	</li><li id="impressum-section">
+		
+		<a data-mscc-ic="false" href="https://www.microsoft.com/de-de/corporate/rechtliche-hinweise/impressum.aspx" data-bi-name="impressum" class=" external-link-indicator" id="impressum-link" title="">Impressum</a>
+	
+	</li><li>
+		
+		<a data-mscc-ic="false" href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/" data-bi-name="trademarks" class=" external-link-indicator" id="" title="">Marken</a>
+	
+	</li>
+				<li>© Microsoft 2026</li>
+			</ul>
+		</footer>
+	
+			<noscript><img src="https://learn.microsoft.com/akam/13/pixel_6d296e14?a=dD0wOGU5NTAxZjcyYmFiNmMwOGMyNDlhZTg3Nzg3YjY0MmZhN2Y4ZDA5JmpzPW9mZg==" style="visibility: hidden; position: absolute; left: -999px; top: -999px;" /></noscript>
+		</div></body></html>
